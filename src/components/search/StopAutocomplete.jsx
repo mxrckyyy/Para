@@ -205,7 +205,7 @@ export function StopAutocomplete({
           id={listboxId}
           role="listbox"
           aria-label={`${label} suggestions`}
-          className="mt-1 overflow-hidden rounded-md border border-border bg-surface shadow-sm"
+          className="mt-1 max-h-60 overflow-auto rounded-md border border-border bg-surface shadow-sm"
         >
           {suggestions.length > 0 ? (
             suggestions.map((stop, index) => {

@@ -43,7 +43,9 @@ export function Header() {
                 className={[
                   'inline-flex min-h-10 items-center gap-2 rounded-md px-3 text-sm font-medium transition-colors',
                   'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface',
-                  active ? 'text-primary' : 'text-text-secondary hover:text-text',
+                  active
+                    ? 'text-primary border-b-2 border-primary'
+                    : 'text-text-secondary border-b-2 border-transparent hover:text-text hover:border-border',
                 ].join(' ')}
               >
                 <Icon className="h-4 w-4" aria-hidden="true" />

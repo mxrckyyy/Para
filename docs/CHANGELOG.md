@@ -78,6 +78,14 @@ Chronological list of notable changes. Update each phase.
 - Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
 - Saved routes and geolocation-based routing remain unimplemented.
 
+### Senior UI/UX audit and interface refinement
+
+- Added a skip link and route-change focus restoration.
+- Improved active navigation indication, autocomplete dropdown scrolling, and map marker accessibility metadata.
+- Added a color-independent map marker legend.
+- Continued to use the documented Tailwind v4 design tokens and existing component patterns.
+- Verified all core checks and the production build after refinement.
+
 ### Phase 8 — Quality assurance, documentation, and deployment preparation (complete)
 
 - Added `README.md` with setup, commands, data limitations, map, persistence, and Vercel deployment instructions.

@@ -146,6 +146,7 @@ export default function MapView({
               key={stop.id}
               position={[stop.lat, stop.lng]}
               icon={createStopIcon(getMarkerType(stop.id, relevantIds))}
+              alt={`Map marker for ${stop.name}`}
             >
               <Popup>
                 <strong>{stop.name}</strong>
@@ -205,6 +206,44 @@ export default function MapView({
           internet connection.
         </p>
       </div>
+
+      <section aria-labelledby="map-legend-title">
+        <h3 id="map-legend-title" className="text-sm font-semibold text-text">
+          Marker legend
+        </h3>
+        <ul className="mt-2 grid gap-2 text-sm text-text-secondary sm:grid-cols-2">
+          <li className="flex items-center gap-2">
+            <span className="para-map-marker para-map-marker--origin" aria-hidden="true">
+              O
+            </span>
+            Origin stop
+          </li>
+          <li className="flex items-center gap-2">
+            <span
+              className="para-map-marker para-map-marker--destination"
+              aria-hidden="true"
+            >
+              D
+            </span>
+            Destination stop
+          </li>
+          <li className="flex items-center gap-2">
+            <span
+              className="para-map-marker para-map-marker--transfer"
+              aria-hidden="true"
+            >
+              T
+            </span>
+            Transfer stop
+          </li>
+          <li className="flex items-center gap-2">
+            <span className="para-map-marker para-map-marker--listed" aria-hidden="true">
+              S
+            </span>
+            Other listed stop
+          </li>
+        </ul>
+      </section>
 
       <section aria-labelledby="map-stop-list-title">
         <h3 id="map-stop-list-title" className="text-sm font-semibold text-text">
