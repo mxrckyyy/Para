@@ -1,0 +1,133 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-primary: #15803d;
+  --color-primary-hover: #166534;
+  --color-primary-pressed: #14532d;
+  --color-primary-soft: #dcfce7;
+
+  --color-bg: #f7faf8;
+  --color-surface: #ffffff;
+  --color-surface-elevated: #ffffff;
+  --color-surface-muted: #f1f5f3;
+
+  --color-text: #111827;
+  --color-text-secondary: #374151;
+  --color-text-muted: #6b7280;
+
+  --color-border: #e5e7eb;
+  --color-border-strong: #d1d5db;
+
+  --color-success: #16a34a;
+  --color-warning: #d97706;
+  --color-error: #dc2626;
+  --color-info: #2563eb;
+
+  --font-sans:
+    ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+    sans-serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+}
+
+html.dark {
+  --color-primary: #22c55e;
+  --color-primary-hover: #4ade80;
+  --color-primary-pressed: #16a34a;
+  --color-primary-soft: #14532d;
+
+  --color-bg: #0b1210;
+  --color-surface: #111a16;
+  --color-surface-elevated: #16211c;
+  --color-surface-muted: #1a2620;
+
+  --color-text: #f3f4f6;
+  --color-text-secondary: #e5e7eb;
+  --color-text-muted: #9ca3af;
+
+  --color-border: #1f2d27;
+  --color-border-strong: #2a3a33;
+
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-error: #f87171;
+  --color-info: #60a5fa;
+}
+
+html {
+  font-family: var(--font-sans);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--color-bg);
+  color: var(--color-text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+.para-map-marker-wrapper {
+  background: transparent;
+  border: 0;
+}
+
+.para-map-marker {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: 9999px;
+  border: 2px solid #ffffff;
+  color: #ffffff;
+  font-size: 0.875rem;
+  font-weight: 700;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.para-map-marker--origin {
+  background-color: #15803d;
+}
+
+.para-map-marker--destination {
+  background-color: #b45309;
+}
+
+.para-map-marker--transfer {
+  background-color: #7c3aed;
+}
+
+.para-map-marker--listed {
+  background-color: #4b5563;
+}
+
+html.dark .para-map-marker--listed {
+  background-color: #6b7280;
+}
+
+html.dark .leaflet-tile {
+  filter: brightness(0.6) invert(1) contrast(3) saturate(0.7);
+}
+
+html.dark .leaflet-container {
+  background-color: #0b1210;
+}

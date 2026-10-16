@@ -1,0 +1,106 @@
+{
+  "version": "1.0.0",
+  "lastReviewed": null,
+  "source": "Illustrative stop records prepared for Para development. Coordinates are approximate landmarks from OpenStreetMap-based geocoding (Photon/Komoot). Stop names and route associations derive from a public Cebu Daily News Digital route-code guide.",
+  "stops": [
+    {
+      "id": "stop-jy-square-lahug",
+      "name": "JY Square (Lahug)",
+      "lat": 10.3301055,
+      "lng": 123.8976342,
+      "aliases": ["JY Square Mall", "Lahug", "JY Square Centre"],
+      "source": "Photon/Komoot (OpenStreetMap contributors), accessed during Phase 2; landmark name also appears in a public Cebu Daily News Digital guide.",
+      "verified": false,
+      "lastReviewed": null,
+      "notes": "Approximate coordinate for a route endpoint. Route sequence and service details are not field-verified."
+    },
+    {
+      "id": "stop-ayala-center-cebu",
+      "name": "Ayala Center Cebu",
+      "lat": 10.3181002,
+      "lng": 123.9051635,
+      "aliases": ["Ayala Cebu", "Cebu Business Park"],
+      "source": "Photon/Komoot (OpenStreetMap contributors), accessed during Phase 2.",
+      "verified": false,
+      "lastReviewed": null,
+      "notes": "Approximate landmark coordinate. Used here as an intermediate stop listed in a public route description."
+    },
+    {
+      "id": "stop-sm-city-cebu",
+      "name": "SM City Cebu",
+      "lat": 10.3116437,
+      "lng": 123.91813,
+      "aliases": ["SM Cebu", "SM City"],
+      "source": "Photon/Komoot (OpenStreetMap contributors), accessed during Phase 2.",
+      "verified": false,
+      "lastReviewed": null,
+      "notes": "Approximate landmark coordinate. Used here as a transfer point between two simplified route descriptions."
+    },
+    {
+      "id": "stop-swu-sambag",
+      "name": "SWU (Sambag II)",
+      "lat": 10.3040724,
+      "lng": 123.8888932,
+      "aliases": ["Southwestern University", "Sambag II"],
+      "source": "Photon/Komoot (OpenStreetMap contributors), accessed during Phase 2; name appears in a public Cebu Daily News Digital guide.",
+      "verified": false,
+      "lastReviewed": null,
+      "notes": "Approximate landmark coordinate. Endpoint taken from a public route description."
+    },
+    {
+      "id": "stop-north-bus-terminal",
+      "name": "North Bus Terminal",
+      "lat": 10.3114677,
+      "lng": 123.921263,
+      "aliases": ["Cebu North Bus Terminal", "NBT"],
+      "source": "Photon/Komoot (OpenStreetMap contributors), accessed during Phase 2.",
+      "verified": false,
+      "lastReviewed": null,
+      "notes": "Approximate landmark coordinate. Endpoint taken from a public route description."
+    },
+    {
+      "id": "stop-carbon-market-cebu",
+      "name": "Carbon Market",
+      "lat": 10.2920377,
+      "lng": 123.8978143,
+      "aliases": ["Carbon Public Market", "Carbon"],
+      "source": "Photon/Komoot (OpenStreetMap contributors), accessed during Phase 2.",
+      "verified": false,
+      "lastReviewed": null,
+      "notes": "Approximate landmark coordinate. Endpoint taken from a public route description."
+    },
+    {
+      "id": "stop-apas-cebu",
+      "name": "Apas",
+      "lat": 10.337504,
+      "lng": 123.9055677,
+      "aliases": ["Barangay Apas"],
+      "source": "Photon/Komoot (OpenStreetMap contributors), accessed during Phase 2; name appears in a public Cebu Daily News Digital guide.",
+      "verified": false,
+      "lastReviewed": null,
+      "notes": "Approximate district-level coordinate. Endpoint taken from a public route description."
+    },
+    {
+      "id": "stop-talamban-cebu",
+      "name": "Talamban",
+      "lat": 10.3693575,
+      "lng": 123.9169315,
+      "aliases": ["Talamban, Cebu City"],
+      "source": "Photon/Komoot (OpenStreetMap contributors), accessed during Phase 2; name appears in a public Cebu Daily News Digital guide.",
+      "verified": false,
+      "lastReviewed": null,
+      "notes": "Approximate district-level coordinate. Endpoint taken from a public route description."
+    },
+    {
+      "id": "stop-colon-street-cebu",
+      "name": "Colon Street",
+      "lat": 10.294437,
+      "lng": 123.8938946,
+      "aliases": ["Colon", "Colon Street, Cebu City"],
+      "source": "Photon/Komoot (OpenStreetMap contributors), accessed during Phase 2; name appears in a public Cebu Daily News Digital guide.",
+      "verified": false,
+      "lastReviewed": null,
+      "notes": "Approximate coordinate for a downtown landmark endpoint."
+    }
+  ]
+}

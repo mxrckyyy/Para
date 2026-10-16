@@ -1,0 +1,67 @@
+{
+  "version": "1.0.0",
+  "lastReviewed": null,
+  "source": "Illustrative route records prepared for Para development. Route codes and short descriptions are based on a Cebu Daily News Digital PUJ route-code guide; stop sequences are simplified for development and are not field-verified.",
+  "routes": [
+    {
+      "id": "route-04l-lahug-sm-via-ayala",
+      "code": "04L",
+      "name": "04L — Lahug (JY Square) to SM via Ayala Center Cebu",
+      "color": "#15803d",
+      "stopIds": ["stop-jy-square-lahug", "stop-ayala-center-cebu", "stop-sm-city-cebu"],
+      "path": null,
+      "source": "Cebu Daily News Digital, 'Lost in Cebu? Here's a guide to Cebu City's jeepney route codes', May 15, 2026, listing PUJ route code amendments under Cebu City Ordinance No. 2000 and city transportation office data. Cited text: '04-L | Lahug (JY Square) – SM: via Ayala Center Cebu'.",
+      "verified": false,
+      "lastReviewed": null,
+      "notes": "Development simplification of a route description. Stop sequence, travel direction, intermediate stops, fares, travel times, and geometry are not verified and may be incomplete.",
+      "direction": null,
+      "estimatedFarePhp": null,
+      "estimatedTravelTimeMinutes": null
+    },
+    {
+      "id": "route-01k-swu-sm-north-bus-terminal",
+      "code": "01K",
+      "name": "01K — Sambag II (SWU) to SM and North Bus Terminal",
+      "color": "#2563eb",
+      "stopIds": ["stop-swu-sambag", "stop-sm-city-cebu", "stop-north-bus-terminal"],
+      "path": null,
+      "source": "Cebu Daily News Digital, 'Lost in Cebu? Here's a guide to Cebu City's jeepney route codes', May 15, 2026, listing PUJ route code amendments under Cebu City Ordinance No. 2000 and city transportation office data. Cited text: '01-K | Sambag II (SWU) – SM – North Bus Terminal'.",
+      "verified": false,
+      "lastReviewed": null,
+      "notes": "Development simplification of a route description. Stop sequence, travel direction, intermediate stops, fares, travel times, and geometry are not verified and may be incomplete.",
+      "direction": null,
+      "estimatedFarePhp": null,
+      "estimatedTravelTimeMinutes": null
+    },
+    {
+      "id": "route-17b-apas-carbon",
+      "code": "17B",
+      "name": "17B — Apas to Carbon via Escario and Osmeña Boulevard",
+      "color": "#7c3aed",
+      "stopIds": ["stop-apas-cebu", "stop-carbon-market-cebu"],
+      "path": null,
+      "source": "Cebu Daily News Digital, 'Lost in Cebu? Here's a guide to Cebu City's jeepney route codes', May 15, 2026, listing PUJ route code amendments under Cebu City Ordinance No. 2000 and city transportation office data. Cited text: '17-B | APAS–CARBON via Escario Osmeña Blvd.'.",
+      "verified": false,
+      "lastReviewed": null,
+      "notes": "Development simplification of a route description. Only endpoints are represented; named corridor streets are not converted into verified intermediate stops. Fares, travel times, travel direction, and geometry are not verified.",
+      "direction": null,
+      "estimatedFarePhp": null,
+      "estimatedTravelTimeMinutes": null
+    },
+    {
+      "id": "route-13c-talamban-colon",
+      "code": "13C",
+      "name": "13C — Talamban to Colon via Echavez and Sikatuna",
+      "color": "#d97706",
+      "stopIds": ["stop-talamban-cebu", "stop-colon-street-cebu"],
+      "path": null,
+      "source": "Cebu Daily News Digital, 'Lost in Cebu? Here's a guide to Cebu City's jeepney route codes', May 15, 2026, listing PUJ route code amendments under Cebu City Ordinance No. 2000 and city transportation office data. Cited text: '13-C | TALAMBAN-COLON via Echavez – Sikatuna'.",
+      "verified": false,
+      "lastReviewed": null,
+      "notes": "Development simplification of a route description. Only endpoints are represented; named corridor streets are not converted into verified intermediate stops. Fares, travel times, travel direction, and geometry are not verified.",
+      "direction": null,
+      "estimatedFarePhp": null,
+      "estimatedTravelTimeMinutes": null
+    }
+  ]
+}
