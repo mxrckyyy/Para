@@ -1,6 +1,6 @@
 import { lazy, Suspense, useEffect, useMemo } from 'react'
 import { ArrowLeft } from 'lucide-react'
-import { Link, useLocation } from 'wouter'
+import { Link } from 'wouter'
 
 import { findJourneys } from '../utils/routeEngine.js'
 import { readSearchParameters } from '../utils/journeyLinks.js'
@@ -11,15 +11,8 @@ const stops = stopsData.stops
 const stopsById = new Map(stops.map((stop) => [stop.id, stop]))
 const MapView = lazy(() => import('../components/map/MapView.jsx'))
 
-function readQuery() {
-  if (typeof window === 'undefined') return { from: null, to: null }
-  return readSearchParameters(window.location.search)
-}
-
-export default function Map() {
-  const [location] = useLocation()
-  // eslint-disable-next-line react-hooks/exhaustive-deps
-  const query = useMemo(() => readQuery(), [location])
+export default function MapPage() {
+  const query = useMemo(() => readSearchParameters(window.location.search), [])
 
   const originStop = useMemo(
     () => (typeof query.from === 'string' ? (stopsById.get(query.from) ?? null) : null),
