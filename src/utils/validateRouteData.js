@@ -1,5 +1,6 @@
 const HEX_COLOR_PATTERN = /^#(?:[0-9a-fA-F]{3}|[0-9a-fA-F]{6})$/
 const ISO_DATE_PATTERN = /^\d{4}-\d{2}-\d{2}$/
+const VERIFICATION_STATUSES = ['unverified', 'partially_verified', 'verified', 'outdated']
 
 function isFiniteNumber(value) {
   return typeof value === 'number' && Number.isFinite(value)
@@ -35,6 +36,66 @@ function validateStringField(value, label, errors, required = true) {
   if (value === undefined && !required) return
   if (typeof value !== 'string' || value.trim() === '') {
     addError(errors, `${label} must be a non-empty string.`)
+  }
+}
+
+function validateProvenance(record, label, errors) {
+  if (hasOwn(record, 'verificationStatus')) {
+    if (
+      typeof record.verificationStatus !== 'string' ||
+      !VERIFICATION_STATUSES.includes(record.verificationStatus)
+    ) {
+      addError(
+        errors,
+        `${label}: "verificationStatus" must be one of ${VERIFICATION_STATUSES.join(', ')}.`,
+      )
+    }
+  }
+
+  if (hasOwn(record, 'verificationDate')) {
+    validateDate(record.verificationDate, `${label}: "verificationDate"`, errors)
+  }
+
+  if (hasOwn(record, 'reviewedBy')) {
+    validateStringField(record.reviewedBy, `${label}: "reviewedBy"`, errors, false)
+  }
+
+  if (hasOwn(record, 'evidenceReference')) {
+    validateStringField(
+      record.evidenceReference,
+      `${label}: "evidenceReference"`,
+      errors,
+      false,
+    )
+  }
+
+  if (hasOwn(record, 'sourceOrganization')) {
+    validateStringField(
+      record.sourceOrganization,
+      `${label}: "sourceOrganization"`,
+      errors,
+      false,
+    )
+  }
+
+  if (
+    (record.verified === true && record.verificationStatus === 'unverified') ||
+    record.verificationStatus === 'outdated'
+  ) {
+    addError(
+      errors,
+      `${label}: a verified record cannot have verificationStatus "unverified" or "outdated".`,
+    )
+  }
+
+  if (
+    record.verificationStatus === 'verified' &&
+    (record.verified !== true || record.lastReviewed === null)
+  ) {
+    addError(
+      errors,
+      `${label}: verificationStatus "verified" requires verified=true and a non-null lastReviewed date.`,
+    )
   }
 }
 
@@ -109,6 +170,8 @@ export function validateRouteData(stopsInput, routesInput) {
         validateDate(stop.lastReviewed, `${label}: "lastReviewed"`, errors)
       }
 
+      validateProvenance(stop, label, errors)
+
       if (typeof stop.aliases !== 'undefined') {
         if (
           !Array.isArray(stop.aliases) ||
@@ -169,6 +232,8 @@ export function validateRouteData(stopsInput, routesInput) {
       } else {
         validateDate(route.lastReviewed, `${label}: "lastReviewed"`, errors)
       }
+
+      validateProvenance(route, label, errors)
 
       if (typeof route.color !== 'string' || !HEX_COLOR_PATTERN.test(route.color)) {
         addError(errors, `${label}: "color" must be a hexadecimal color such as #15803d.`)

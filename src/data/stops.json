@@ -11,8 +11,13 @@
       "aliases": ["JY Square Mall", "Lahug", "JY Square Centre"],
       "source": "Photon/Komoot (OpenStreetMap contributors), accessed during Phase 2; landmark name also appears in a public Cebu Daily News Digital guide.",
       "verified": false,
-      "lastReviewed": null,
-      "notes": "Approximate coordinate for a route endpoint. Route sequence and service details are not field-verified."
+      "lastReviewed": "2026-11-21",
+      "notes": "Secondary sources support the stop name and its use in the simplified 04L route description. The coordinate is an approximate landmark. Stop sequence, direction, fare, schedule, and geometry are not verified.",
+      "sourceOrganization": "Suroy.ph; Cebu Daily News Digital; Photon/Komoot (OpenStreetMap contributors)",
+      "evidenceReference": "Suroy.ph Cebu City Jeepney Guide 2026 lists 04L as \"JY Square to Ayala and SM\" and advises boarding around JY Square and confirming Ayala or SM. Cebu Daily News Digital May 15, 2026 cites \"04-L | Lahug (JY Square) – SM: via Ayala Center Cebu\". Coordinates are approximate OpenStreetMap-based landmarks.",
+      "verificationStatus": "partially_verified",
+      "verificationDate": "2026-11-21",
+      "reviewedBy": "Para Phase 17 pilot verification"
     },
     {
       "id": "stop-ayala-center-cebu",
@@ -22,8 +27,13 @@
       "aliases": ["Ayala Cebu", "Cebu Business Park"],
       "source": "Photon/Komoot (OpenStreetMap contributors), accessed during Phase 2.",
       "verified": false,
-      "lastReviewed": null,
-      "notes": "Approximate landmark coordinate. Used here as an intermediate stop listed in a public route description."
+      "lastReviewed": "2026-11-21",
+      "notes": "Secondary sources support the stop name and its use in the simplified 04L route description. The coordinate is an approximate landmark. Stop sequence, direction, fare, schedule, and geometry are not verified.",
+      "sourceOrganization": "Suroy.ph; Cebu Daily News Digital; Photon/Komoot (OpenStreetMap contributors)",
+      "evidenceReference": "Suroy.ph Cebu City Jeepney Guide 2026 lists 04L as \"JY Square to Ayala and SM\" and advises boarding around JY Square and confirming Ayala or SM. Cebu Daily News Digital May 15, 2026 cites \"04-L | Lahug (JY Square) – SM: via Ayala Center Cebu\". Coordinates are approximate OpenStreetMap-based landmarks.",
+      "verificationStatus": "partially_verified",
+      "verificationDate": "2026-11-21",
+      "reviewedBy": "Para Phase 17 pilot verification"
     },
     {
       "id": "stop-sm-city-cebu",
@@ -33,8 +43,13 @@
       "aliases": ["SM Cebu", "SM City"],
       "source": "Photon/Komoot (OpenStreetMap contributors), accessed during Phase 2.",
       "verified": false,
-      "lastReviewed": null,
-      "notes": "Approximate landmark coordinate. Used here as a transfer point between two simplified route descriptions."
+      "lastReviewed": "2026-11-21",
+      "notes": "Secondary sources support the stop name and its use in the simplified 04L route description. The coordinate is an approximate landmark. Stop sequence, direction, fare, schedule, and geometry are not verified.",
+      "sourceOrganization": "Suroy.ph; Cebu Daily News Digital; Photon/Komoot (OpenStreetMap contributors)",
+      "evidenceReference": "Suroy.ph Cebu City Jeepney Guide 2026 lists 04L as \"JY Square to Ayala and SM\" and advises boarding around JY Square and confirming Ayala or SM. Cebu Daily News Digital May 15, 2026 cites \"04-L | Lahug (JY Square) – SM: via Ayala Center Cebu\". Coordinates are approximate OpenStreetMap-based landmarks.",
+      "verificationStatus": "partially_verified",
+      "verificationDate": "2026-11-21",
+      "reviewedBy": "Para Phase 17 pilot verification"
     },
     {
       "id": "stop-swu-sambag",

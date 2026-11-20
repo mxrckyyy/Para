@@ -78,6 +78,28 @@ Chronological list of notable changes. Update each phase.
 - Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
 - Saved routes and geolocation-based routing remain unimplemented.
 
+### Phase 17 — Pilot Cebu jeepney route verification
+
+- Selected route `04L` (`route-04l-lahug-sm-via-ayala`) as the pilot route.
+- Reviewed Suroy.ph and Cebu Daily News Digital as secondary sources.
+- Updated the route and three related stops with `partially_verified` status and source provenance.
+- Added `direction: "forward"` based on secondary source direction support, while keeping `verified: false`.
+- Did not add geometry, fare, schedule, travel time, or unverified stops.
+- Updated route-data source and verification documentation.
+- Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
+
+### Phase 16 — Transit data verification foundation
+
+- Added `docs/route-data-verification.md`.
+- Added `docs/route-data-schema.md`.
+- Updated `docs/route-data-sources.md` with source reliability and dataset audit information.
+- Corrected mojibake in `src/data/routes.json` route names and cited descriptions.
+- Added optional provenance validation for `verificationStatus`, `verificationDate`, `reviewedBy`, `evidenceReference`, and `sourceOrganization`.
+- Added consistency checks between `verified` and `verificationStatus`.
+- Preserved all existing unverified stop and route records.
+- No route, stop, fare, schedule, direction, or geometry was invented.
+- Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
+
 ### Senior UI/UX audit and interface refinement
 
 - Improved navigation active-state visibility.

@@ -10,13 +10,18 @@
       "color": "#15803d",
       "stopIds": ["stop-jy-square-lahug", "stop-ayala-center-cebu", "stop-sm-city-cebu"],
       "path": null,
-      "source": "Cebu Daily News Digital, 'Lost in Cebu? Here's a guide to Cebu City's jeepney route codes', May 15, 2026, listing PUJ route code amendments under Cebu City Ordinance No. 2000 and city transportation office data. Cited text: '04-L | Lahug (JY Square) – SM: via Ayala Center Cebu'.",
+      "source": "Cebu Daily News Digital, \"Lost in Cebu? Here's a guide to Cebu City's jeepney route codes\", May 15, 2026, listing PUJ route code amendments under Cebu City Ordinance No. 2000 and city transportation office data. Cited text: \"04-L | Lahug (JY Square) – SM: via Ayala Center Cebu\". Suroy.ph, \"Cebu City Jeepney Guide 2026: Route Codes, Fares, and How to Ride\", updated October 24, 2026, lists 04L as \"JY Square to Ayala and SM\" and advises boarding around JY Square and confirming Ayala or SM.",
       "verified": false,
-      "lastReviewed": null,
-      "notes": "Development simplification of a route description. Stop sequence, travel direction, intermediate stops, fares, travel times, and geometry are not verified and may be incomplete.",
-      "direction": null,
+      "lastReviewed": "2026-11-21",
+      "notes": "Secondary sources support the route code and the simplified endpoint/intermediate-stop sequence JY Square (Lahug) -> Ayala Center Cebu -> SM City Cebu, with travel from JY Square toward Ayala and SM. This is not an official or field-verified route. Intermediate stops beyond Ayala, exact stop order, fares, schedules, travel times, and geometry are not verified.",
+      "direction": "forward",
       "estimatedFarePhp": null,
-      "estimatedTravelTimeMinutes": null
+      "estimatedTravelTimeMinutes": null,
+      "sourceOrganization": "Suroy.ph; Cebu Daily News Digital",
+      "evidenceReference": "Suroy.ph lists 04L as \"JY Square to Ayala and SM\" and states that boarding occurs around JY Square with Ayala or SM confirmation. Cebu Daily News Digital May 15, 2026 cites \"04-L | Lahug (JY Square) – SM: via Ayala Center Cebu\".",
+      "verificationStatus": "partially_verified",
+      "verificationDate": "2026-11-21",
+      "reviewedBy": "Para Phase 17 pilot verification"
     },
     {
       "id": "route-01k-swu-sm-north-bus-terminal",
