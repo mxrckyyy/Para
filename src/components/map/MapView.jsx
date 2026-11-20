@@ -180,7 +180,7 @@ export default function MapView({
         <button
           type="button"
           onClick={resetView}
-          className="min-h-10 rounded-md border border-border bg-surface px-3 py-1.5 text-sm font-medium text-text transition-colors hover:bg-surface-muted"
+          className="min-h-11 rounded-md border border-border bg-surface px-3 py-1.5 text-sm font-medium text-text transition-colors hover:bg-surface-muted"
         >
           Fit selected stops
         </button>

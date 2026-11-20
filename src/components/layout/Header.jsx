@@ -22,7 +22,7 @@ export function Header() {
       <div className="mx-auto flex w-full max-w-6xl items-center justify-between gap-4 px-4 py-3 md:px-6 lg:px-8">
         <Link
           href="/"
-          className="flex items-center gap-2 text-lg font-semibold tracking-tight text-text outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface rounded-md"
+          className="flex min-h-11 items-center gap-2 text-lg font-semibold tracking-tight text-text outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface rounded-md"
         >
           <span className="h-2.5 w-2.5 rounded-full bg-primary" aria-hidden="true" />
           Para

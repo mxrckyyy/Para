@@ -80,6 +80,23 @@ Chronological list of notable changes. Update each phase.
 
 ### Senior UI/UX audit and interface refinement
 
+- Improved navigation active-state visibility.
+- Improved autocomplete suggestion touch targets and scrolling.
+- Improved map marker accessibility and added a color-independent marker legend.
+- Updated preliminary-data messaging to reflect implemented journey results.
+- Increased primary interactive touch-target sizing.
+- Preserved existing functionality, routing, data, and design direction.
+
+### Dependency modernization
+
+- Upgraded React and React DOM to 19.3.1.
+- Upgraded Vite to 8.3.8 and @vitejs/plugin-react to 6.3.0.
+- Upgraded Tailwind CSS and @tailwindcss/vite to 4.3.5.
+- Upgraded supporting packages to current stable releases, including Wouter 3.13.0, Lucide React 1.77.0, Vitest 5.1.1, ESLint 10.15.0, and Prettier 3.10.1.
+- Verified data validation, linting, formatting, tests, and production build after the upgrade.
+
+### Senior UI/UX audit and interface refinement
+
 - Added a skip link and route-change focus restoration.
 - Improved active navigation indication, autocomplete dropdown scrolling, and map marker accessibility metadata.
 - Added a color-independent map marker legend.

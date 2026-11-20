@@ -58,7 +58,7 @@ export function JourneyCard({ journey, fromId, toId, saved = false, onToggleSave
                 ? `Remove saved journey from ${originName} to ${destinationName}`
                 : `Save journey from ${originName} to ${destinationName}`
             }
-            className="inline-flex min-h-10 min-w-10 items-center justify-center rounded-md text-text-secondary transition-colors hover:bg-surface-muted hover:text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
+            className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-md text-text-secondary transition-colors hover:bg-surface-muted hover:text-text focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
           >
             <Bookmark
               className={`h-5 w-5 ${saved ? 'fill-current text-primary' : ''}`}

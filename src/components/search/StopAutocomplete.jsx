@@ -220,7 +220,7 @@ export function StopAutocomplete({
                   tabIndex={-1}
                   onClick={() => selectStop(stop)}
                   className={[
-                    'flex w-full items-center justify-between gap-3 px-3 py-2.5 text-left text-sm transition-colors',
+                    'flex min-h-11 w-full items-center justify-between gap-3 px-3 py-2.5 text-left text-sm transition-colors',
                     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary',
                     isActive
                       ? 'bg-primary-soft text-primary'

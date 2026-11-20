@@ -296,8 +296,8 @@ export default function Home() {
               actual pickup point.
             </p>
             <p>
-              No journey calculation, fare estimate, or live transit information is
-              available yet.
+              Journey results are based on the current preliminary dataset. Fare and live
+              transit information are unavailable.
             </p>
           </div>
         </div>
@@ -309,11 +309,8 @@ export default function Home() {
         </h2>
         <ul className="space-y-2 text-sm text-text-secondary">
           <li>1. Choose an origin and destination stop.</li>
-          <li>2. Compare direct and one-transfer journeys in a later phase.</li>
-          <li>
-            3. Review journey steps, stops, and route geometry on the map in a later
-            phase.
-          </li>
+          <li>2. Compare direct and one-transfer journeys by estimated travel time.</li>
+          <li>3. Review journey steps, stops, and listed stop locations on the map.</li>
         </ul>
       </section>
     </section>
