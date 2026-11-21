@@ -82,3 +82,11 @@ Always run `npm run build` before `npm run test:e2e` if the preview server is no
 - Playwright (`npm run test:e2e`): real browser, tests rendered UI, routing, storage, and user flows.
 
 Totals are reported separately; do not combine them.
+
+## Accessibility tests
+
+- File: `tests/e2e/accessibility.spec.mjs` (11 tests).
+- Uses `@axe-core/playwright` with WCAG 2.1/2.2 AA tags.
+- Scans pages and UI states in light and dark themes.
+- Included in `npm run test:e2e`.
+- See `docs/quality/automated-accessibility-testing.md`.

@@ -1,4 +1,6 @@
-@import 'tailwindcss';
+﻿@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
 
 @theme {
   --color-primary: #15803d;
@@ -13,7 +15,7 @@
 
   --color-text: #111827;
   --color-text-secondary: #374151;
-  --color-text-muted: #6b7280;
+  --color-text-muted: #4b5563;
 
   --color-border: #e5e7eb;
   --color-border-strong: #d1d5db;

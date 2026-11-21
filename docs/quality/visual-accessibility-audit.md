@@ -81,3 +81,11 @@ Not run. No axe-core dependency added (kept minimal). Manual checks only.
 - Color contrast not measured with a tool; relies on design tokens.
 - Screen-reader behavior not tested with real assistive technology.
 - Only Chromium tested.
+
+## Phase 32 update
+
+- Integrated @axe-core/playwright; added 11 automated accessibility scans.
+- Fixed color-contrast issues: light text-muted darkened, dark mode button/badge text adjusted.
+- Added Tailwind class-based dark variant for dark: utilities.
+- All 11 scans pass with zero violations.
+- Vercel deployment source commit remains unverified; see docs/quality/vercel-deployment-verification.md.

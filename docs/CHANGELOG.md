@@ -277,3 +277,15 @@ Chronological list of notable changes. Update each phase.
 - Added `docs/quality/visual-accessibility-audit.md`.
 - Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test` (56/56), `npm run build`, and `npm run test:e2e` (7/7).
 - Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 32 - Automated accessibility testing and deployment provenance
+
+- Added @axe-core/playwright dev dependency.
+- Added tests/e2e/accessibility.spec.mjs with 11 WCAG 2.1/2.2 AA scans (light/dark, UI states).
+- Fixed color-contrast defects: light text-muted darkened (#6b7280 to #4b5563); dark mode button text darkened; badge/alias text adjusted; added Tailwind class-based dark variant.
+- All 11 accessibility scans pass with zero violations.
+- Added docs/quality/automated-accessibility-testing.md and docs/quality/vercel-deployment-verification.md.
+- Updated docs/quality/browser-e2e-testing.md and docs/quality/visual-accessibility-audit.md.
+- Documented production deployment commit as unverified (not exposed by deployment).
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (56/56), npm run build, npm run test:e2e (18/18).
+- Route and stop data unchanged (9 stops, 4 routes).

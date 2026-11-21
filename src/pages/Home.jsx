@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react'
+﻿import { useEffect, useMemo, useState } from 'react'
 import { ArrowUpDown, Info, Navigation } from 'lucide-react'
 import { useLocation } from 'wouter'
 
@@ -32,7 +32,7 @@ export default function Home() {
   const destinationStop = useMemo(() => findStop(destinationId), [destinationId])
 
   useEffect(() => {
-    document.title = 'Para — Find a jeepney route'
+    document.title = 'Para â€” Find a jeepney route'
   }, [])
 
   useEffect(() => {
@@ -229,7 +229,7 @@ export default function Home() {
         <div className="mt-5 space-y-3">
           <button
             type="submit"
-            className="min-h-11 w-full rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-white transition-colors hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
+            className="min-h-11 w-full rounded-md bg-primary px-4 py-2.5 text-sm font-semibold text-white dark:text-gray-900 transition-colors hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-bg"
           >
             Find routes
           </button>
@@ -273,7 +273,7 @@ export default function Home() {
                 <button
                   type="button"
                   onClick={handleApplySuggestedStop}
-                  className="min-h-10 rounded-md bg-primary-soft px-3 py-1.5 text-sm font-medium text-primary transition-colors hover:bg-primary hover:text-white focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
+                  className="min-h-10 rounded-md bg-primary-soft px-3 py-1.5 text-sm font-medium text-primary dark:text-primary-hover transition-colors hover:bg-primary hover:text-white dark:hover:text-gray-900 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
                 >
                   Use as origin
                 </button>

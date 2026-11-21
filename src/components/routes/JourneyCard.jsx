@@ -74,7 +74,7 @@ export function JourneyCard({ journey, fromId, toId, saved = false, onToggleSave
             className={[
               'rounded-md px-2 py-1 text-xs font-semibold',
               isDirect
-                ? 'bg-primary-soft text-primary'
+                ? 'bg-primary-soft text-primary dark:text-primary-hover'
                 : 'bg-surface-muted text-text-secondary',
             ].join(' ')}
           >
@@ -130,7 +130,7 @@ export function JourneyCard({ journey, fromId, toId, saved = false, onToggleSave
       {fromId && toId && (
         <Link
           href={detailPath}
-          className="mt-4 inline-flex min-h-11 items-center rounded-md bg-primary px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
+          className="mt-4 inline-flex min-h-11 items-center rounded-md bg-primary px-4 py-2 text-sm font-semibold text-white dark:text-gray-900 transition-colors hover:bg-primary-hover focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-surface"
         >
           View details
         </Link>
