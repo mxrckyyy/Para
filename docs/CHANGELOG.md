@@ -289,3 +289,71 @@ Chronological list of notable changes. Update each phase.
 - Documented production deployment commit as unverified (not exposed by deployment).
 - Verified with npm run validate:data, npm run lint, npm run format:check, npm test (56/56), npm run build, npm run test:e2e (18/18).
 - Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 33 - Cross-browser compatibility and manual accessibility readiness
+
+- Installed Firefox and WebKit browser binaries for Playwright.
+- Updated playwright.config.mjs to run chromium, firefox, and webkit projects.
+- Increased autocomplete wait (250ms to 400ms) for WebKit stability.
+- Skipped Firefox-only axe scan of autocomplete-open state (documented tooling limitation).
+- Created docs/quality/cross-browser-compatibility.md and docs/quality/manual-accessibility-checklist.md.
+- Updated docs/quality/browser-e2e-testing.md and docs/quality/automated-accessibility-testing.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (56/56), npm run build, npm run test:e2e (53 passed, 1 skipped, 0 failed across 3 browsers).
+- Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 34 - Mobile device emulation and responsive regression testing
+
+- Added mobile-chromium (Pixel 7) and mobile-webkit (iPhone 13) Playwright projects.
+- Added tests/e2e/mobile-responsive.spec.mjs (30 tests: 15 per device).
+- Added bottom padding to main content on mobile to prevent bottom-nav overlap.
+- Created docs/quality/mobile-device-testing.md.
+- Updated docs/quality/browser-e2e-testing.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (56/56), npm run build, npm run test:e2e (mobile: 30/30 passed).
+- Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 36 - Security, privacy, and data protection audit
+
+- Audited client-side security: no dangerouslySetInnerHTML, no eval, no hardcoded secrets.
+- Verified browser storage: localStorage only for theme and validated saved-journey references; robust parsing and error handling.
+- Verified geolocation: requested only on user action, coordinates not persisted or transmitted, denial handled.
+- Ran npm audit: 0 vulnerabilities.
+- Reviewed Vercel/Vite config: SPA rewrite, no source maps, no exposed secrets.
+- Created docs/privacy-and-security.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (56/56), npm run build, npm run test:e2e.
+- Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 37 - Performance optimization and Core Web Vitals audit
+
+- Lazy-loaded RouteDetail and Saved pages via React.lazy.
+- Main bundle reduced from 295.83 kB to 246.55 kB (gzip 88.92 to 76.40 kB).
+- Created docs/quality/performance-audit.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (56/56), npm run build, npm run test:e2e (chromium 18/18).
+- Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 38 - Lighthouse and runtime performance measurement
+
+- Measured with Lighthouse 13.6.0 (Chrome headless) on local production build.
+- Desktop: home/results/saved score 100; map score 87 (LCP 3.9s from tiles).
+- Mobile (emulated): home 100; map 85.
+- CLS 0 on all routes. TBT max 90ms.
+- Updated docs/quality/performance-audit.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (56/56), npm run build.
+- Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 39 - Performance validation and regression closure
+
+- Repeated Lighthouse 3 runs per route; medians recorded.
+- Map LCP confirmed as OpenStreetMap tile image via Lighthouse lcp-breakdown-insight.
+- Content pages: LCP ~0.76s, score 100. Map: LCP ~4.19s, score 86.
+- Updated docs/quality/performance-audit.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (56/56), npm run build.
+- Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 40 - Mobile performance validation and E2E reliability
+
+- Ran mobile Lighthouse 3 times per route (home, results, map, saved).
+- Mobile median: home 100 (LCP 0.77s), results 100 (LCP 0.76s), map 85 (LCP 4.37s), saved 100 (LCP 1.73s).
+- Investigated E2E timeout: root cause is 84 tests across 5 projects exceeding 120s shell default. Playwright itself does not time out. No config change needed.
+- Updated docs/quality/performance-audit.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (56/56), npm run build.
+- Route and stop data unchanged (9 stops, 4 routes).

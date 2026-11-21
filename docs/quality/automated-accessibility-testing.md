@@ -63,3 +63,9 @@ Phase 32 fixes:
 - Dark mode badge/alias text uses lighter primary-hover shade where needed.
 - Added Tailwind class-based dark variant (@custom-variant) so dark: utilities respond to .dark class.
 - All 11 accessibility scans pass with zero violations.
+
+## Cross-browser notes
+
+- Firefox: autocomplete-open axe scan skipped (axe-core crash, tooling limitation).
+- WebKit: all 11 scans pass.
+- See docs/quality/cross-browser-compatibility.md.

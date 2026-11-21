@@ -1,13 +1,15 @@
-import { lazy, Suspense } from 'react'
+﻿import { lazy, Suspense } from 'react'
 import { Route, Router, Switch } from 'wouter'
+
 import { ThemeProvider } from './hooks/useTheme.js'
 import { AppShell } from './components/layout/AppShell.jsx'
 import HomePage from './pages/Home.jsx'
 import ResultsPage from './pages/Results.jsx'
-import RouteDetailPage from './pages/RouteDetail.jsx'
-const MapPage = lazy(() => import('./pages/Map.jsx'))
-import SavedPage from './pages/Saved.jsx'
 import NotFoundPage from './pages/NotFound.jsx'
+
+const MapPage = lazy(() => import('./pages/Map.jsx'))
+const RouteDetailPage = lazy(() => import('./pages/RouteDetail.jsx'))
+const SavedPage = lazy(() => import('./pages/Saved.jsx'))
 
 function App() {
   return (

@@ -90,3 +90,17 @@ Totals are reported separately; do not combine them.
 - Scans pages and UI states in light and dark themes.
 - Included in `npm run test:e2e`.
 - See `docs/quality/automated-accessibility-testing.md`.
+
+## Cross-browser support
+
+- Projects: chromium, firefox, webkit (configured in playwright.config.mjs).
+- All E2E tests run in each browser.
+- Known: Firefox axe-core crashes on autocomplete-open scan (skipped with documentation).
+- WebKit required slightly longer autocomplete waits (400ms).
+- See docs/quality/cross-browser-compatibility.md.
+
+## Mobile device projects
+
+- mobile-chromium (Pixel 7), mobile-webkit (iPhone 13).
+- Test file: tests/e2e/mobile-responsive.spec.mjs (30 tests, 15 per device).
+- See docs/quality/mobile-device-testing.md.

@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+﻿import { useEffect } from 'react'
 import { useLocation } from 'wouter'
 
 import { Header } from './Header.jsx'
@@ -24,7 +24,7 @@ export function AppShell({ children }) {
       <main
         id="main-content"
         tabIndex={-1}
-        className="mx-auto w-full max-w-6xl px-4 py-6 outline-none sm:py-8 md:px-6 lg:px-8"
+        className="mx-auto w-full max-w-6xl px-4 py-6 pb-24 outline-none sm:py-8 md:px-6 md:pb-8 lg:px-8"
       >
         <div className="w-full">{children}</div>
       </main>
