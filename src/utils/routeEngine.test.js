@@ -400,3 +400,117 @@ describe('deduplication, ranking, and estimates', () => {
     })
   })
 })
+
+describe('route engine edge cases', () => {
+  it('ignores routes with fewer than two stops', () => {
+    const oneStopRoute = {
+      id: 'route-one-stop',
+      code: 'O1',
+      stopIds: ['stop-origin'],
+    }
+
+    expect(
+      findDirectJourneys('stop-origin', 'stop-destination', {
+        routes: [oneStopRoute],
+        stops: testStops,
+      }),
+    ).toEqual([])
+    expect(
+      findTransferJourneys('stop-origin', 'stop-destination', {
+        routes: [oneStopRoute, transferSecondRoute],
+        stops: testStops,
+      }),
+    ).toEqual([])
+  })
+
+  it('ignores routes with invalid stop references', () => {
+    const invalidReferenceRoute = {
+      id: 'route-invalid-reference',
+      code: 'IR',
+      stopIds: ['stop-origin', 'missing-stop'],
+    }
+
+    expect(
+      findDirectJourneys('stop-origin', 'missing-stop', {
+        routes: [invalidReferenceRoute],
+        stops: testStops,
+      }),
+    ).toEqual([])
+  })
+
+  it('handles repeated stop IDs without creating an invalid direct journey', () => {
+    const repeatedStopRoute = {
+      id: 'route-repeated',
+      code: 'RP',
+      stopIds: ['stop-origin', 'stop-transfer', 'stop-transfer', 'stop-destination'],
+    }
+
+    const journeys = findDirectJourneys('stop-origin', 'stop-destination', {
+      routes: [repeatedStopRoute],
+      stops: testStops,
+    })
+
+    expect(journeys).toHaveLength(1)
+    expect(journeys[0].routeIds).toEqual(['route-repeated'])
+    expect(Number.isFinite(journeys[0].estimatedDistanceMetres)).toBe(true)
+  })
+
+  it('returns multiple direct journeys in deterministic route order', () => {
+    const secondDirectRoute = {
+      id: 'route-direct-2',
+      code: 'D2',
+      stopIds: ['stop-origin', 'stop-destination'],
+    }
+
+    const journeys = findDirectJourneys('stop-origin', 'stop-destination', {
+      routes: [directRoute, secondDirectRoute],
+      stops: testStops,
+    })
+
+    expect(journeys.map((journey) => journey.routeIds[0])).toEqual([
+      'route-direct',
+      'route-direct-2',
+    ])
+  })
+
+  it('returns unavailable estimates when stop coordinates are missing', () => {
+    const noCoordinateStops = testStops.map((stop) =>
+      stop.id === 'stop-origin' || stop.id === 'stop-destination'
+        ? { ...stop, lat: null, lng: null }
+        : stop,
+    )
+
+    const journey = findDirectJourneys('stop-origin', 'stop-destination', {
+      routes: [directRoute],
+      stops: noCoordinateStops,
+    })[0]
+
+    expect(journey).toBeDefined()
+    expect(journey.estimatedDistanceMetres).toBeNull()
+    expect(journey.estimatedDurationMinutes).toBeNull()
+    expect(journey.estimateStatus.distance).toBe('unavailable')
+    expect(journey.estimateStatus.duration).toBe('unavailable')
+  })
+
+  it('returns null for invalid estimate inputs', () => {
+    expect(estimateJourneyDurationMinutes(null, 0)).toBeNull()
+    expect(
+      estimateJourneyDurationMinutes(1000, 0, {
+        averageSpeedKilometresPerHour: 0,
+      }),
+    ).toBeNull()
+    expect(estimateJourney(null, testStops)).toBeNull()
+  })
+
+  it('keeps an explicitly bidirectional route available in both directions', () => {
+    const forward = findDirectJourneys('stop-origin', 'stop-destination', {
+      routes: [bidirectionalRoute],
+    })
+    const reverse = findDirectJourneys('stop-destination', 'stop-origin', {
+      routes: [bidirectionalRoute],
+    })
+
+    expect(forward).toHaveLength(1)
+    expect(reverse).toHaveLength(1)
+  })
+})

@@ -156,6 +156,61 @@ Final status: `partially_verified`.
 
 The route remains `verified: false`. No route geometry, fare, schedule, or additional stop was invented.
 
+## Phase 18 official-source investigation
+
+Official and government sources attempted:
+
+- LTFRB website and regional pages: not accessible in this audit (HTTP 403 or transport errors).
+- Cebu City government website: not accessible in this audit (HTTP 404 or transport errors).
+- Cebu City Transportation Office pages: not accessible in this audit.
+- Cebu provincial government website: accessible, but no route-specific jeepney data was found.
+
+No official LTFRB, Cebu City, or Cebu City Transportation Office document was directly reviewed in this phase.
+
+Secondary source reviewed:
+
+- Suroy.ph, "Cebu City Jeepney Guide 2026: Route Codes, Fares, and How to Ride", updated October 24, 2026.
+  - Supports `04L` as "JY Square to Ayala and SM".
+  - Supports `01K` as "Urgello in Sambag II to the SM City Cebu side".
+  - Supports `17B` as "Apas near IT Park, Lahug, Capitol, Osmeña Boulevard, Colon, Carbon".
+  - Supports `13C` as "Talamban, Colon", via Echavez and Sikatuna.
+  - Provides general fare structure, not route-specific fares.
+
+Findings:
+
+- Route `04L` remains the strongest candidate but is still only partially supported by secondary sources.
+- Route `01K` has a potential endpoint mismatch: Para uses `SWU (Sambag II)`, while Suroy.ph describes the start as `Urgello in Sambag II`.
+- Routes `17B` and `13C` have only endpoint support in Para's current records.
+- No official route geometry, fare, schedule, or measured travel time was found.
+
+## Additional source: SunStar Cebu LPTRP compliance report
+
+Publisher: SunStar Cebu
+
+Title: "LTFRB 7 okays Cebu City route plan"
+
+Original URL: https://www.sunstar.com.ph/cebu/ltfrb-7-okays-cebu-city-route-plan
+
+Publication date: September 8, 2025
+
+Geographic coverage: Cebu City Local Public Transport Route Plan (LPTRP) and newly rationalized PUJ Class 2 routes.
+
+What it supports:
+
+- LTFRB-7 issued a Notice of Compliance to Cebu City's LPTRP on September 8, 2025.
+- The LPTRP is described as a comprehensive strategy that rationalizes public land transport routes within the city.
+- The report lists newly rationalized PUJ Class 2 routes and additional development routes.
+- The report states that the city must pass a local ordinance formally adopting the LPTRP before the plan receives legal force.
+
+What it does not establish:
+
+- The full LPTRP document or route annex.
+- Whether legacy route code `04L` remains in operation.
+- Whether `04L` was discontinued, replaced, or incorporated into another route.
+- Exact stop sequences, directions, fares, schedules, travel times, or geometry for `04L`.
+
+Reliability concern: This is a secondary news report about an official compliance notice. It is useful for understanding the transport-framework timeline but is not a route-level source for 04L.
+
 ## Recommended future improvements
 
 - Compare records against official Cebu City transportation office publications.

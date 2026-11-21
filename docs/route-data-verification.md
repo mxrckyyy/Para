@@ -86,6 +86,167 @@ Not verified:
 
 Result: The route's code, endpoints, and intermediate Ayala/SM corridor are supported by secondary sources. The route is not marked `verified` because official or field evidence is not available. No geometry, fare, schedule, or additional stop was added.
 
+## Phase 18 official-source investigation
+
+Official and government sources attempted:
+
+- LTFRB website and regional pages: not accessible in this audit (HTTP 403 or transport errors).
+- Cebu City government website: not accessible in this audit (HTTP 404 or transport errors).
+- Cebu City Transportation Office pages: not accessible in this audit.
+- Cebu provincial government website: accessible, but no route-specific jeepney data was found.
+
+No official LTFRB, Cebu City, or Cebu City Transportation Office document was directly reviewed in this phase.
+
+Secondary source reviewed:
+
+- Suroy.ph, "Cebu City Jeepney Guide 2026: Route Codes, Fares, and How to Ride", updated October 24, 2026.
+  - Supports 04L as "JY Square to Ayala and SM".
+  - Supports 01K as "Urgello in Sambag II to the SM City Cebu side".
+  - Supports 17B as "Apas near IT Park, Lahug, Capitol, Osmeña Boulevard, Colon, Carbon".
+  - Supports 13C as "Talamban, Colon", via Echavez and Sikatuna.
+  - Provides general fare structure, not route-specific fares.
+
+Pilot route 04L findings:
+
+- Endpoints: supported as JY Square and SM by Suroy.ph and Cebu Daily News Digital.
+- Intermediate stop: Ayala Center Cebu is supported by Suroy.ph and Cebu Daily News Digital.
+- Stop ordering: supported only as a simplified corridor sequence.
+- Direction: supported as JY Square toward Ayala and SM by secondary sources.
+- Geometry: no authoritative geometry found.
+- Fare: no route-specific fare found.
+- Schedule or travel time: no source found.
+
+Conflicting information:
+
+- Route `01K` uses `SWU (Sambag II)` as an endpoint in Para's current data, while Suroy.ph describes the route as starting at `Urgello in Sambag II`. This is a potential endpoint mismatch and remains unresolved.
+- Suroy.ph describes route `17B` as passing additional corridor landmarks, but Para's record contains only endpoints.
+- Suroy.ph describes route `13C` as passing Echavez and Sikatuna, but Para's record contains only endpoints.
+
+Verification decision:
+
+- Route `04L` remains `partially_verified`.
+- `verified` remains `false`.
+- `direction` remains `forward` because secondary sources support travel from JY Square toward Ayala and SM.
+- `path` remains `null`.
+- No fare, schedule, travel time, or additional stop was added.
+
+Field-verification requirements before any route can be marked verified:
+
+- Record the exact boarding and alighting locations for each route.
+- Record the order in which stops are served.
+- Confirm the outbound and return directions separately.
+- Record evidence with photos, timestamps, and observer notes where permitted.
+- Compare observations against at least one credible source.
+- Add geometry only from a verified route path.
+- Add fares only from an official or clearly current source.
+- Document conflicting observations instead of resolving them by assumption.
+
+## Claim-level verification
+
+Verification is claim-level, not route-level.
+
+A route may have some supported claims and some unsupported claims. For example, a route code and endpoints may be supported by a credible source while its stop sequence, direction, fare, schedule, and geometry remain unverified.
+
+The route's overall status must reflect the weakest unsupported required detail. A route with supported endpoints but unsupported geometry, fare, or schedule must not be marked `verified`.
+
+## Evidence documentation model
+
+Evidence should be recorded as lightweight documentation, not fabricated data. A future evidence record should include:
+
+- Evidence ID.
+- Related route ID or stop ID.
+- Claim category.
+- Source title.
+- Publisher or organization.
+- Source type.
+- URL or reference.
+- Publication date, if known.
+- Date reviewed.
+- Specific claim supported.
+- Supporting details.
+- Limitations.
+- Confidence level.
+- Review status.
+
+Evidence categories include:
+
+- Route endpoints.
+- Intermediate stops.
+- Stop sequence.
+- Direction.
+- Route geometry.
+- Fare.
+- Schedule.
+- Travel time.
+- Accessibility information.
+- Other.
+
+Source types include:
+
+- Government document.
+- Transit operator publication.
+- Credible secondary publication.
+- Map reference.
+- Documented observation.
+- Other.
+
+An evidence record documents source discovery or support. It does not by itself verify a route unless the source is sufficiently credible and current and the claim is directly supported.
+
+## Evidence review workflow
+
+1. Identify the claim requiring verification.
+2. Find an appropriate source.
+3. Record source metadata.
+4. Evaluate source credibility and recency.
+5. Identify exactly what the source supports.
+6. Identify what the source does not support.
+7. Compare the source with existing Para data.
+8. Document conflicts.
+9. Decide whether the claim can be updated.
+10. Record the review date and reviewer.
+11. Revalidate the dataset with `npm run validate:data`.
+12. Update the changelog.
+
+A source supporting one attribute must not automatically verify another attribute. Endpoints, intermediate stops, stop order, direction, geometry, fare, schedule, and travel time must be evaluated separately.
+
+## Safe observation protocol
+
+Field observation is optional and must never be required for routine verification.
+
+Rules:
+
+- Never require independent travel.
+- Never require boarding a jeepney.
+- Never require approaching unfamiliar drivers or passengers.
+- Never require taking photographs of people.
+- Conduct any observation only in public, appropriate, and safe settings.
+- If observation is ever undertaken, it must be accompanied by a trusted adult.
+- If safe observation cannot be performed, the claim simply remains unverified.
+- Document conflicting observations instead of resolving them by assumption.
+
+This workflow supports documentary research without field observation.
+
+## Evidence template
+
+Use `docs/evidence-review-template.md` for each route or stop claim.
+
+The template is intentionally empty. Do not pre-fill it with unconfirmed information.
+
+## 2025–2026 transport framework timeline
+
+- Cebu Daily News Digital, May 15, 2026, cites Cebu City Ordinance No. 2000 and city transportation office data for PUJ route code amendments.
+- SunStar Cebu, September 8, 2025, reports that LTFRB-7 issued a Notice of Compliance to Cebu City's LPTRP.
+- The SunStar report states that the city must pass a local ordinance formally adopting the LPTRP before it receives legal force.
+- Suroy.ph, updated October 24, 2026, describes current Cebu City jeepney route codes and fares.
+- CommuteTour Philippines, updated January 16, 2026, describes Cebu jeepney route codes and landmarks.
+
+Interpretation limits:
+
+- The existence of an approved LPTRP does not automatically verify every older jeepney route code.
+- The SunStar report does not list `04L` among the newly rationalized PUJ Class 2 routes.
+- The absence of `04L` from that list does not establish whether it remains in operation, has been discontinued, or may be incorporated into another route.
+- Secondary route guides may describe legacy or current operating patterns, but they do not establish official authorization.
+
 ## Invalid data handling
 
 The application and validator must never crash because of malformed saved or route data.

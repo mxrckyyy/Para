@@ -1,6 +1,7 @@
 import { Bookmark } from 'lucide-react'
 import { Link } from 'wouter'
 
+import { DataStatusBadge } from '../common/DataStatusBadge.jsx'
 import { encodeJourneyToken } from '../../utils/journeyLinks.js'
 import routesData from '../../data/routes.json'
 import stopsData from '../../data/stops.json'
@@ -34,6 +35,10 @@ export function JourneyCard({ journey, fromId, toId, saved = false, onToggleSave
   const originName = stopsById.get(fromId)?.name ?? fromId
   const destinationName = stopsById.get(toId)?.name ?? toId
   const distanceLabel = formatDistance(journey?.estimatedDistanceMetres)
+  const routeVerificationStatus =
+    routeIds
+      .map((routeId) => routesById.get(routeId)?.verificationStatus)
+      .find((status) => typeof status === 'string') ?? 'unverified'
 
   return (
     <article className="rounded-lg border border-border bg-surface p-4 shadow-sm transition-colors">
@@ -48,7 +53,7 @@ export function JourneyCard({ journey, fromId, toId, saved = false, onToggleSave
               : (journey?.type ?? 'Journey')}
           </h3>
         </div>
-        <div className="flex shrink-0 items-center gap-2">
+        <div className="flex shrink-0 flex-col items-end gap-2">
           <button
             type="button"
             onClick={() => onToggleSave?.(journey)}
@@ -75,6 +80,7 @@ export function JourneyCard({ journey, fromId, toId, saved = false, onToggleSave
           >
             {isDirect ? 'Direct' : 'Transfer'}
           </span>
+          <DataStatusBadge status={routeVerificationStatus} />
         </div>
       </div>
 
@@ -117,7 +123,8 @@ export function JourneyCard({ journey, fromId, toId, saved = false, onToggleSave
       </dl>
 
       <p className="mt-3 text-xs text-text-muted">
-        Duration is an estimate. Fare is unavailable because no fare data is present.
+        Route data is preliminary. Duration is a calculated estimate. Fare is unavailable
+        because no fare data is present.
       </p>
 
       {fromId && toId && (

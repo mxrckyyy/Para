@@ -15,6 +15,11 @@ function asStringId(value) {
   return result.length > 0 ? result : null
 }
 
+function allStopsKnown(stopIds, stops) {
+  if (stops.size === 0) return true
+  return stopIds.every((stopId) => stops.has(stopId))
+}
+
 function normaliseStopLookup(stopInput) {
   if (!stopInput) return new Map()
 
@@ -285,6 +290,12 @@ export function findDirectJourneys(
   const destinationId = asStringId(destinationStopId)
 
   if (!originId || !destinationId || originId === destinationId) return []
+  if (
+    request.stops.size > 0 &&
+    (!request.stops.has(originId) || !request.stops.has(destinationId))
+  ) {
+    return []
+  }
 
   const journeys = new Map()
 
@@ -297,6 +308,11 @@ export function findDirectJourneys(
 
       const destinationIndex = firstIndexAfter(orientation, destinationId, originIndex)
       if (destinationIndex < 0) continue
+
+      const travelStopIds = orientation.slice(originIndex, destinationIndex + 1)
+      if (request.stops.size > 0 && !allStopsKnown(travelStopIds, request.stops)) {
+        continue
+      }
 
       const journey = makeDirectJourney(
         route,
@@ -333,6 +349,12 @@ export function findTransferJourneys(
   const destinationId = asStringId(destinationStopId)
 
   if (!originId || !destinationId || originId === destinationId) return []
+  if (
+    request.stops.size > 0 &&
+    (!request.stops.has(originId) || !request.stops.has(destinationId))
+  ) {
+    return []
+  }
 
   const routes = request.routes.map((route, index) => ({
     route,
@@ -382,6 +404,23 @@ export function findTransferJourneys(
 
             if (transferIndexInFirst < 0 || transferIndexInSecond < 0) continue
             if (transferStopId === originId) continue
+            if (request.stops.size > 0 && !request.stops.has(transferStopId)) continue
+
+            const firstTravelStopIds = firstOrientation.slice(
+              originIndexInFirst,
+              transferIndexInFirst + 1,
+            )
+            const secondTravelStopIds = secondOrientation.slice(
+              transferIndexInSecond,
+              destinationIndexInSecond + 1,
+            )
+            if (
+              request.stops.size > 0 &&
+              (!allStopsKnown(firstTravelStopIds, request.stops) ||
+                !allStopsKnown(secondTravelStopIds, request.stops))
+            ) {
+              continue
+            }
 
             const journey = makeTransferJourney(
               firstEntry.route,

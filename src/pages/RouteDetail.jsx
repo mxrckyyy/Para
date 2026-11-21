@@ -2,6 +2,7 @@ import { useEffect, useMemo } from 'react'
 import { ArrowLeft, Bookmark, MapPin, Route } from 'lucide-react'
 import { Link, useLocation } from 'wouter'
 
+import { DataStatusBadge } from '../components/common/DataStatusBadge.jsx'
 import { findJourneys } from '../utils/routeEngine.js'
 import { decodeJourneyToken, readSearchParameters } from '../utils/journeyLinks.js'
 import { useSavedRoutes } from '../hooks/useSavedRoutes.js'
@@ -147,6 +148,10 @@ export default function RouteDetail() {
 
   const isDirect = journey.type === 'direct'
   const routeIds = Array.isArray(journey.routeIds) ? journey.routeIds : []
+  const routeVerificationStatus =
+    routeIds
+      .map((routeId) => routesById.get(routeId)?.verificationStatus)
+      .find((status) => typeof status === 'string') ?? 'unverified'
   const transferStop =
     typeof journey.transferStopId === 'string'
       ? (stopsById.get(journey.transferStopId) ?? null)
@@ -193,8 +198,8 @@ export default function RouteDetail() {
       >
         <p>
           These are preliminary results from an unverified stop and route dataset. Route
-          service, directions, schedules, fares, and availability may differ from what is
-          shown.
+          details may be incomplete, and service, directions, schedules, fares, and
+          availability may differ from what is shown.
         </p>
       </div>
 
@@ -209,6 +214,9 @@ export default function RouteDetail() {
                 ? routeIds.map((routeId) => routeCode(routeId)).join(' + ')
                 : journey.type}
             </h2>
+            <div className="mt-2">
+              <DataStatusBadge status={routeVerificationStatus} />
+            </div>
           </div>
           <button
             type="button"

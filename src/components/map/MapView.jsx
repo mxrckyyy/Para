@@ -199,7 +199,7 @@ export default function MapView({
         <p className="mt-1">
           {supportedGeometry
             ? 'Route geometry from an explicit supported field is shown separately where available.'
-            : 'Route geometry is not available yet. This map shows listed stop locations only.'}
+            : 'Route geometry is not available yet. This map shows listed stop or landmark locations only; markers do not confirm an operating stop.'}
         </p>
         <p className="mt-1">
           Map tiles load from the public OpenStreetMap tile service and require an

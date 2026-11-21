@@ -128,6 +128,27 @@ Verification fields:
 
 A record can be discovered from a source without being verified. Only records with documented evidence and review should be marked `verified: true` or `verificationStatus: "verified"`.
 
+## Optional evidence record
+
+Future route or stop records may include an optional `evidenceRecords` array. This is documentation metadata and does not make a record verified by itself.
+
+Each evidence record may contain:
+
+- `evidenceId`
+- `relatedRecordId`
+- `claimCategory`
+- `sourceTitle`
+- `sourceOrganization`
+- `sourceType`
+- `urlOrReference`
+- `publicationDate`
+- `dateReviewed`
+- `claimSupported`
+- `supportingDetails`
+- `limitations`
+- `confidence`
+- `reviewStatus`
+
 ## Saved journey storage
 
 Saved journeys store only reference data, not authoritative route facts.

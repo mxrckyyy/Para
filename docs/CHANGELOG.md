@@ -78,6 +78,89 @@ Chronological list of notable changes. Update each phase.
 - Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
 - Saved routes and geolocation-based routing remain unimplemented.
 
+### Phase 28 — Safe verification workflow and evidence collection system
+
+- Added `docs/field-verification/04L-verification-protocol.md`.
+- Added `docs/field-verification/04L-claim-checklist.md`.
+- Documented safe research boundaries, evidence acceptance criteria, conflict resolution, approval workflow, and privacy considerations.
+- Did not add fieldwork instructions requiring travel, boarding, or approaching drivers or passengers.
+- Did not change route data, route status, geometry, fare, schedule, or travel-time values.
+- Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
+
+### Phase 27 — 04L official source discovery and evidence research
+
+- Reviewed the SunStar Cebu report on LTFRB-7's Notice of Compliance for Cebu City's LPTRP.
+- Documented that the report does not list `04L` among newly rationalized PUJ Class 2 routes.
+- Documented that this absence does not establish whether `04L` remains in operation, has been discontinued, or may be incorporated into another route.
+- Added a 2025–2026 transport framework timeline to route-data verification documentation.
+- Did not change route, stop, fare, schedule, travel-time, or geometry data.
+- Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
+
+### Phase 26 — Test suite integrity audit and historical test-count reconciliation
+
+- Added `docs/test-suite-integrity-audit.md`.
+- Confirmed the current test count is 56 tests.
+- Explained the 49-versus-56 discrepancy as a reporting difference after Phase 23 added 7 route-engine edge-case tests.
+- Confirmed no tests were deleted, skipped, renamed, excluded, or weakened.
+- Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
+
+### Phase 25 — Controlled 04L evidence review
+
+- Created `docs/evidence-reviews/04L-review-2026-11-21-phase-25.md`.
+- Re-reviewed secondary sources for route `04L`.
+- Added a claim-level evidence matrix and source inventory.
+- Confirmed that `04L` remains partially verified and `verified` remains false.
+- Did not add geometry, fare, schedule, travel-time data, or additional stops.
+- Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
+
+### Phase 24 — Route coverage strategy and evidence gap assessment
+
+- Added `docs/route-coverage-assessment.md`.
+- Documented the existing 9-stop, 4-route dataset.
+- Assessed evidence quality and route-by-route gaps.
+- Defined a route prioritization methodology.
+- Created a future evidence collection checklist.
+- Defined dataset expansion decision rules.
+- Recommended `04L` as the first route for future verification.
+- Did not add routes, stops, geometry, fares, schedules, or travel times.
+- Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
+
+### Phase 23 — Route engine reliability and data integrity audit
+
+- Added focused route-engine edge-case tests.
+- Improved invalid stop-reference handling so invalid route stop IDs cannot produce journeys when stop data is available.
+- Preserved route discovery, ranking, deduplication, and estimate behavior.
+- Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
+
+### Phase 20 — Controlled 04L evidence review
+
+- Created `docs/evidence-reviews/04L-review-2026-11-21.md`.
+- Reviewed Suroy.ph and CommuteTour Philippines as additional secondary sources.
+- Confirmed route `04L` remains `partially_verified` and `verified: false`.
+- Did not add geometry, fare, schedule, travel-time data, or additional stops.
+- Documented claim-by-claim evidence and remaining uncertainties.
+- Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
+
+### Phase 19 — Safe verification workflow and evidence collection system
+
+- Added `docs/evidence-review-template.md`.
+- Updated `docs/route-data-verification.md` with claim-level verification, evidence documentation model, review workflow, safe observation protocol, and template guidance.
+- Updated `docs/route-data-schema.md` with an optional evidence-record structure.
+- Preserved existing validation behavior and unverified data.
+- No route, stop, geometry, fare, schedule, or travel-time data was invented.
+- Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
+
+### Phase 18 — 04L evidence completion and verification readiness
+
+- Investigated official and secondary sources for route `04L`.
+- Official LTFRB, Cebu City, and Cebu City Transportation Office sources were not directly accessible.
+- Reviewed Suroy.ph as a secondary source.
+- Confirmed that `04L` is supported only as a partially verified corridor.
+- Documented a potential `01K` endpoint mismatch.
+- Added field-verification requirements and remaining research gaps.
+- Did not change route, stop, fare, schedule, travel-time, or geometry data.
+- Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
+
 ### Phase 17 — Pilot Cebu jeepney route verification
 
 - Selected route `04L` (`route-04l-lahug-sm-via-ayala`) as the pilot route.
@@ -157,3 +240,18 @@ Chronological list of notable changes. Update each phase.
 - Updated repository state in `AGENTS.md`.
 - Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
 - Maps, saved routes, search UI changes, geolocation-based routing, live transit, scheduling, and new datasets were not implemented.
+
+### Phase 21 — User-facing transit data transparency and trust UX
+
+- Added `src/components/common/DataStatusBadge.jsx`.
+- Added route-data status badges to journey cards and route details.
+- Clarified preliminary-data, calculated-duration, and unavailable-fare messaging.
+- Updated map no-geometry messaging to state that markers are listed locations only.
+- Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
+
+### Phase 22 — Transparency UX browser QA and refinement
+
+- Performed browser-based QA of Phase 21 transparency changes.
+- Verified routes, interactions, themes, responsive overflow, and browser console health.
+- No source defects were found requiring changes.
+- Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
