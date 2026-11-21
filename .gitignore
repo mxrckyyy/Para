@@ -20,3 +20,7 @@ dist
 .DS_Store
 Thumbs.db
 *.local
+# Playwright output
+test-results/
+playwright-report/
+.playwright/

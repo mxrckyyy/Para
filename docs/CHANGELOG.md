@@ -255,3 +255,25 @@ Chronological list of notable changes. Update each phase.
 - Verified routes, interactions, themes, responsive overflow, and browser console health.
 - No source defects were found requiring changes.
 - Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
+
+### Phase 30 - Browser end-to-end testing and regression foundation
+
+- Added Playwright dev dependency and `test:e2e` npm script.
+- Added `playwright.config.mjs` with local preview server and Chromium configuration.
+- Added `tests/e2e/home-search.spec.mjs`, `tests/e2e/journey-details.spec.mjs`, and `tests/e2e/navigation-responsive.spec.mjs` (7 browser E2E tests).
+- Covered home validation, autocomplete, swap, supported search, results, journey detail, preliminary-data messaging, fare-unavailable messaging, map markers and no-geometry notice, save/remove/persist journeys, invalid parameters, 404, theme toggle, refresh/back navigation, and responsive overflow (320-1440 px).
+- Added `docs/quality/browser-e2e-testing.md` and `docs/quality/test-inventory-reconciliation.md`.
+- Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test` (56/56), `npm run build`, and `npm run test:e2e` (7/7).
+- Route and stop data unchanged (9 stops, 4 routes). No new features, geometry, fares, or schedules added.
+
+### Phase 31 - Visual quality, accessibility, and production deployment audit
+
+- Performed visual, responsive, accessibility, keyboard, and production-deployment audit.
+- Inspected all major screens at 7 viewport sizes in light and dark themes.
+- Verified production URL reachability, SPA routing, refresh, theme toggle, and absence of console errors.
+- Confirmed deployed asset filenames match the local production build.
+- Reported production source commit as unknown (not exposed by deployment).
+- Fixed one Low-severity heading-hierarchy issue in `JourneyCard.jsx` (h3 to h2).
+- Added `docs/quality/visual-accessibility-audit.md`.
+- Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test` (56/56), `npm run build`, and `npm run test:e2e` (7/7).
+- Route and stop data unchanged (9 stops, 4 routes).

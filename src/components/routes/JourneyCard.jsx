@@ -1,4 +1,4 @@
-import { Bookmark } from 'lucide-react'
+﻿import { Bookmark } from 'lucide-react'
 import { Link } from 'wouter'
 
 import { DataStatusBadge } from '../common/DataStatusBadge.jsx'
@@ -47,11 +47,11 @@ export function JourneyCard({ journey, fromId, toId, saved = false, onToggleSave
           <p className="text-xs font-semibold uppercase tracking-wide text-text-muted">
             {isDirect ? 'Direct journey' : '1-transfer journey'}
           </p>
-          <h3 className="mt-1 text-base font-semibold text-text">
+          <h2 className="mt-1 text-base font-semibold text-text">
             {routeCodes.length > 0
               ? routeCodes.join(' + ')
               : (journey?.type ?? 'Journey')}
-          </h3>
+          </h2>
         </div>
         <div className="flex shrink-0 flex-col items-end gap-2">
           <button
@@ -87,7 +87,7 @@ export function JourneyCard({ journey, fromId, toId, saved = false, onToggleSave
       <p className="mt-3 text-sm text-text-secondary">
         {routeIds.map((routeId, index) => (
           <span key={routeId}>
-            {index > 0 && <span aria-hidden="true"> → </span>}
+            {index > 0 && <span aria-hidden="true"> â†’ </span>}
             {routesById.get(routeId)?.name ?? routesById.get(routeId)?.code ?? routeId}
           </span>
         ))}
