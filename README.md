@@ -1,4 +1,4 @@
-# Para
+﻿# Para
 
 Para is a mobile-first React application that helps commuters in Cebu discover possible jeepney routes between an
 origin and destination. It searches bundled static route data, sorts and filters journey options through a
@@ -60,15 +60,18 @@ Then open the URL printed by Vite.
 
 ## Available scripts
 
-```sh
+````sh
 npm run validate:data
 npm run lint
 npm run format
 npm run format:check
 npm test
+npm run test:e2e
 npm run build
 npm run preview
-```
+``
+
+`npm run test:e2e` runs the Playwright browser suite (Chromium, Firefox, WebKit, and mobile emulation). Install browser binaries first with `npx playwright install` if they are not already present.`
 
 - `npm run validate:data` runs the Phase-specific structural checks for stops and routes.
 - `npm run lint` runs ESLint.
@@ -103,7 +106,7 @@ Para is a static SPA built by:
 
 ```sh
 npm run build
-```
+````
 
 The production output is created in `dist`.
 
@@ -152,4 +155,16 @@ The map uses public OpenStreetMap tiles and displays the required OpenStreetMap 
 - Routing is client-side through Wouter.
 - Domain route-finding logic is intentionally separated from React components.
 - Static JSON remains the only route/stops data source.
-- Later project phases are intentionally not represented in this foundation phase.
+- The project has since grown through Phases 1-43, including route discovery, results, journey details, map, saved journeys, automated tests, accessibility audits, performance audits, and deployment verification. See docs/CHANGELOG.md for the full history.
+
+## Documentation
+
+- AGENTS.md - persistent project instructions and architecture rules
+- docs/ARCHITECTURE.md - SPA architecture and routing
+- docs/CHANGELOG.md - phase history
+- docs/quality/browser-e2e-testing.md - Playwright E2E testing
+- docs/quality/automated-accessibility-testing.md - Axe accessibility testing
+- docs/quality/performance-audit.md - performance measurements
+- docs/quality/production-deployment-audit.md - deployment provenance
+- docs/quality/release-readiness-audit.md - release readiness
+- docs/privacy-and-security.md - privacy and security notes

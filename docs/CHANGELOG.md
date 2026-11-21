@@ -357,3 +357,40 @@ Chronological list of notable changes. Update each phase.
 - Updated docs/quality/performance-audit.md.
 - Verified with npm run validate:data, npm run lint, npm run format:check, npm test (56/56), npm run build.
 - Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 41 - Integrated release readiness audit
+
+- Audited functionality, route data, accessibility, security/privacy, performance, testing, documentation.
+- Ran all verification commands: validate:data, lint, format:check, test (56/56), build (PASS).
+- Ran all 5 Playwright projects: 84 tests, 83 passed, 1 skipped, 0 failed.
+- Created docs/quality/release-readiness-audit.md.
+- Decision: READY WITH DOCUMENTED LIMITATIONS.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (56/56), npm run build.
+- Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 42 - Production deployment provenance audit
+
+- Verified local HEAD (b7d747b) matches origin/main (0 ahead/behind).
+- Production URL reachable; smoke tests pass; no console errors.
+- Deployed asset filename matches local build (informational only).
+- Deployed commit SHA not exposed; classified as UNVERIFIED.
+- Created docs/quality/production-deployment-audit.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (56/56), npm run build.
+- Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 43 - Final documentation and repository handoff audit
+
+- Updated README.md: added test:e2e command, Playwright browser install note, documentation links section, and corrected stale phase reference.
+- Verified all internal documentation links resolve.
+- Verified documented package commands against package.json.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (56/56), npm run build.
+- Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 44 - V1.1 product roadmap and engineering prioritization
+
+- Created docs/roadmap/V1.1-ROADMAP.md with prioritized phases, acceptance criteria, and non-goals.
+- Identified route-data coverage as the highest-impact product problem.
+- Recommended Phase A (route-data evidence review) as the first implementation phase.
+- Verified all referenced paths and recommendations against the actual implementation.
+- Updated docs/CHANGELOG.md.
+- Route and stop data unchanged (9 stops, 4 routes).
