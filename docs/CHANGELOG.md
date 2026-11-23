@@ -529,3 +529,13 @@ Chronological list of notable changes. Update each phase.
 - Created docs/quality/phase-59-vercel-configuration-repair.md.
 - Verified with npm run validate:data, npm run lint, npm run format:check, npm test (56/56), npm run build, npm audit (0 vulns).
 - Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 60 - Git integrity, BOM change audit, and release recovery
+
+- Investigated HEAD discrepancy: auto-commit 945d64f "fix" created during Phase 59 BOM removal.
+- Confirmed all published release commits (1751582, 4d6627f) are ancestors of 945d64f.
+- Verified BOM removal changed only BOM bytes (no content changes).
+- Vercel config JSON now parses correctly (BOM was root cause of deployment failure).
+- All validation commands pass: validate:data, lint, format:check, test (56/56), build, npm audit (0 vulns).
+- Created docs/quality/phase-60-git-integrity-and-bom-audit.md.
+- Route and stop data unchanged (9 stops, 4 routes).
