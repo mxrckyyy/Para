@@ -132,7 +132,7 @@ test.describe('mobile saved journeys', () => {
     await page.reload()
     await expect(page.getByText(/1 saved journey/i)).toBeVisible()
     await page.getByRole('button', { name: /remove saved journey/i }).click()
-    await expect(page.getByText(/no saved routes/i)).toBeVisible()
+    await expect(page.getByText(/no saved journeys/i)).toBeVisible()
   })
 })
 

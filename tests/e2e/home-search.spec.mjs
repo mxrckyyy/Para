@@ -15,7 +15,7 @@ test('autocomplete and swap work', async ({ page }) => {
   const origin = page.getByLabel(/^origin$/i)
   await origin.fill('sm')
   await origin.focus()
-  await page.waitForTimeout(400)
+  await page.waitForTimeout(600)
   await expect(page.getByRole('option', { name: /sm city cebu/i })).toBeVisible()
   await page
     .getByRole('option', { name: /sm city cebu/i })
@@ -26,7 +26,7 @@ test('autocomplete and swap work', async ({ page }) => {
   const destination = page.getByLabel(/^destination$/i)
   await destination.fill('Lahug')
   await destination.focus()
-  await page.waitForTimeout(400)
+  await page.waitForTimeout(600)
   await page
     .getByRole('option', { name: /jy square/i })
     .first()

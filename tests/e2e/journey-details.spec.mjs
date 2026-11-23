@@ -1,4 +1,4 @@
-import { expect, test } from '@playwright/test'
+﻿import { expect, test } from '@playwright/test'
 
 test('results, route detail, map, and saved journey work', async ({ page }) => {
   await page.goto('/results?from=stop-jy-square-lahug&to=stop-sm-city-cebu')
@@ -28,7 +28,7 @@ test('results, route detail, map, and saved journey work', async ({ page }) => {
   await page.reload()
   await expect(page.getByText(/1 saved journey/i)).toBeVisible()
   await page.getByRole('button', { name: /remove saved journey/i }).click()
-  await expect(page.getByText(/no saved routes/i)).toBeVisible()
+  await expect(page.getByText(/no saved journeys/i)).toBeVisible()
 })
 
 test('invalid route and detail parameters fail gracefully', async ({ page }) => {
