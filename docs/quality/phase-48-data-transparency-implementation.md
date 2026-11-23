@@ -1,4 +1,4 @@
-﻿# Phase 48 Data Transparency & Journey Confidence
+# Phase 48 Data Transparency & Journey Confidence
 
 ## 1. Initial Git state
 

@@ -1,4 +1,4 @@
-﻿# Visual, Accessibility & Production Deployment Audit - Para (Phase 31)
+# Visual, Accessibility & Production Deployment Audit - Para (Phase 31)
 
 ## Audit scope
 

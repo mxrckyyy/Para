@@ -1,4 +1,4 @@
-﻿import { expect, test } from '@playwright/test'
+import { expect, test } from '@playwright/test'
 
 async function noHorizontalOverflow(page) {
   return page.evaluate(() => document.documentElement.scrollWidth <= window.innerWidth)

@@ -1,4 +1,4 @@
-﻿# Phase 51 Production Deployment Provenance Audit
+# Phase 51 Production Deployment Provenance Audit
 
 ## Audit overview
 

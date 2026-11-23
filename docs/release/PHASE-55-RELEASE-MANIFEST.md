@@ -1,4 +1,4 @@
-﻿# Phase 55 Release Manifest
+# Phase 55 Release Manifest
 
 ## Release overview
 

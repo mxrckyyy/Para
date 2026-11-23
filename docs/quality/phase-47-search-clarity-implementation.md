@@ -1,4 +1,4 @@
-﻿# Phase 47 Search Clarity & Empty-State Implementation
+# Phase 47 Search Clarity & Empty-State Implementation
 
 ## 1. Initial Git state
 

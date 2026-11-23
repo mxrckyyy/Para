@@ -1,4 +1,4 @@
-﻿# Phase 50 Integrated Release Readiness Audit
+# Phase 50 Integrated Release Readiness Audit
 
 ## Audit overview
 

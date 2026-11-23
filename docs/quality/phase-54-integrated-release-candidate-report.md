@@ -1,4 +1,4 @@
-﻿# Phase 54 Integrated Release Candidate Report
+# Phase 54 Integrated Release Candidate Report
 
 ## Audit overview
 

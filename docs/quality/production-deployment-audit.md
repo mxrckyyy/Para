@@ -1,4 +1,4 @@
-﻿# Production Deployment Audit - Para (Phase 42)
+# Production Deployment Audit - Para (Phase 42)
 
 ## Local repository identity
 

@@ -1,4 +1,4 @@
-﻿# Vercel Deployment Verification - Para
+# Vercel Deployment Verification - Para
 
 ## Production URL
 

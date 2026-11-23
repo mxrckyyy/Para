@@ -1,4 +1,4 @@
-﻿import { expect, test } from '@playwright/test'
+import { expect, test } from '@playwright/test'
 
 test('home renders and validates incomplete search', async ({ page }) => {
   await page.goto('/')

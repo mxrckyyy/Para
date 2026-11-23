@@ -1,4 +1,4 @@
-﻿# Para
+# Para
 
 Para is a mobile-first React application that helps commuters in Cebu discover possible jeepney routes between an
 origin and destination. It searches bundled static route data, sorts and filters journey options through a

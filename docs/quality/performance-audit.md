@@ -1,4 +1,4 @@
-﻿# Performance Audit - Para (Phase 37)
+# Performance Audit - Para (Phase 37)
 
 ## Baseline build metrics
 

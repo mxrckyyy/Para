@@ -1,4 +1,4 @@
-﻿# Manual Accessibility Checklist - Para
+# Manual Accessibility Checklist - Para
 
 Status values: Not tested, Pass, Fail, Not applicable.
 

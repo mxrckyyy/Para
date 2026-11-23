@@ -1,4 +1,4 @@
-﻿# Release Readiness Audit - Para (Phase 41)
+# Release Readiness Audit - Para (Phase 41)
 
 ## Audit scope
 

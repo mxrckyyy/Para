@@ -1,4 +1,4 @@
-﻿# Phase 45 Route Evidence Review
+# Phase 45 Route Evidence Review
 
 ## 1. Review scope
 

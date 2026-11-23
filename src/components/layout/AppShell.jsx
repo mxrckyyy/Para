@@ -1,4 +1,4 @@
-﻿import { useEffect } from 'react'
+import { useEffect } from 'react'
 import { useLocation } from 'wouter'
 
 import { Header } from './Header.jsx'

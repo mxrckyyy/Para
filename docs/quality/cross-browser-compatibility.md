@@ -1,4 +1,4 @@
-﻿# Cross-Browser Compatibility - Para (Phase 33)
+# Cross-Browser Compatibility - Para (Phase 33)
 
 ## Browser versions
 

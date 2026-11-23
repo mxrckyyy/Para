@@ -1,4 +1,4 @@
-﻿;(function () {
+;(function () {
   try {
     var stored = localStorage.getItem('para_theme')
     var prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches

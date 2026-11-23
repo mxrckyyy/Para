@@ -1,4 +1,4 @@
-﻿import { Bookmark } from 'lucide-react'
+import { Bookmark } from 'lucide-react'
 import { Link } from 'wouter'
 
 import { DataStatusBadge } from '../common/DataStatusBadge.jsx'

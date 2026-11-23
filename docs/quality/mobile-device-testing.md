@@ -1,4 +1,4 @@
-﻿# Mobile Device Testing - Para (Phase 34)
+# Mobile Device Testing - Para (Phase 34)
 
 ## Supported emulated devices
 

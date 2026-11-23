@@ -1,4 +1,4 @@
-﻿# Automated Accessibility Testing - Para
+# Automated Accessibility Testing - Para
 
 ## Accessibility testing architecture
 

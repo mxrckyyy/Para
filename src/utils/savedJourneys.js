@@ -1,4 +1,4 @@
-﻿import { findJourneys } from './routeEngine.js'
+import { findJourneys } from './routeEngine.js'
 
 export const SAVED_ROUTES_STORAGE_KEY = 'para_saved_routes'
 export const SAVED_ROUTES_SCHEMA_VERSION = 1

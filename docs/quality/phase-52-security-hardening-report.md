@@ -1,4 +1,4 @@
-﻿# Phase 52 Security Hardening Report
+# Phase 52 Security Hardening Report
 
 ## 1. Initial Git state
 

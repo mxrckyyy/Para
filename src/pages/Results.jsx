@@ -1,4 +1,4 @@
-﻿import { useEffect, useMemo } from 'react'
+import { useEffect, useMemo } from 'react'
 import { ArrowLeft } from 'lucide-react'
 import { Link, useLocation } from 'wouter'
 

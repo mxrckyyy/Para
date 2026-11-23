@@ -1,4 +1,4 @@
-﻿import { expect, test } from '@playwright/test'
+import { expect, test } from '@playwright/test'
 
 test('results, route detail, map, and saved journey work', async ({ page }) => {
   await page.goto('/results?from=stop-jy-square-lahug&to=stop-sm-city-cebu')

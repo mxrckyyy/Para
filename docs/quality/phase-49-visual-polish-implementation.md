@@ -1,4 +1,4 @@
-﻿# Phase 49 Visual Polish & UX Refinement
+# Phase 49 Visual Polish & UX Refinement
 
 ## 1. Initial Git state
 

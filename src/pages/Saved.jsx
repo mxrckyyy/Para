@@ -1,4 +1,4 @@
-﻿import { useEffect } from 'react'
+import { useEffect } from 'react'
 import { ArrowLeft, Bookmark as BookmarkIcon } from 'lucide-react'
 import { Link } from 'wouter'
 

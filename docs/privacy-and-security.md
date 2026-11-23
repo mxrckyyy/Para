@@ -1,4 +1,4 @@
-﻿# Privacy and Security - Para
+# Privacy and Security - Para
 
 ## What Para stores
 

@@ -1,4 +1,4 @@
-﻿# Phase 53 Production Security Header Verification
+# Phase 53 Production Security Header Verification
 
 ## Audit overview
 
