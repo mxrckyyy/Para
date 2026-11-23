@@ -394,3 +394,48 @@ Chronological list of notable changes. Update each phase.
 - Verified all referenced paths and recommendations against the actual implementation.
 - Updated docs/CHANGELOG.md.
 - Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 45 - Route evidence review and coverage expansion
+
+- Re-reviewed 04L evidence: PARTIALLY ACCEPT (identity and corridor supported; sequence, direction, geometry, fare, schedule remain unverified).
+- Investigated candidate route 10H (Bulacao/Pardo to SM City Cebu): REJECT/DEFER (secondary and tertiary sources only; no official corroboration).
+- No route or stop data modified. Dataset remains 9 stops, 4 routes.
+- Created docs/evidence-reviews/phase-45-route-evidence-review.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (56/56), npm run build.
+- Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 46 - Journey discovery and search UX audit
+
+- Audited search, results, transfer, route confidence, visual hierarchy, mobile, accessibility, and empty/error states.
+- Identified 14 findings (0 P0, 1 P1 fixed, 5 P2, 8 P3).
+- Created docs/quality/phase-46-journey-discovery-ux-audit.md with prioritized roadmap (Phases 47-49).
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (56/56), npm run build.
+- Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 47 - Search clarity and empty-state improvements
+
+- Reworded home subtitle from "future route search" to clear description.
+- Improved results empty-state prominence (solid border, bolder heading, emphasized action).
+- Softened saved page empty-state wording ("No saved journeys yet").
+- Added origin/destination preview line on home when both stops selected.
+- Reviewed debounce: existing 120ms debounce in StopAutocomplete is sufficient; no changes needed.
+- Created docs/quality/phase-47-search-clarity-implementation.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (56/56), npm run build.
+- Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 48 - Data transparency and journey confidence
+
+- Added Route data last reviewed note to JourneyCard and RouteDetail when lastReviewed is available.
+- No fabricated dates; only shows existing data field (04L: 2026-11-21).
+- Created docs/quality/phase-48-data-transparency-implementation.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (56/56), npm run build, E2E chromium (18/18).
+- Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 49 - Visual polish and UX refinement
+
+- Reassessed all remaining Phase 46 findings (F-03 through F-10).
+- Determined all findings were already adequately addressed by prior phases or existing implementation.
+- No UI changes made. No new dependencies.
+- Created docs/quality/phase-49-visual-polish-implementation.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (56/56), npm run build.
+- Route and stop data unchanged (9 stops, 4 routes).

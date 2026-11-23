@@ -127,6 +127,18 @@ export function JourneyCard({ journey, fromId, toId, saved = false, onToggleSave
         because no fare data is present.
       </p>
 
+      {routeIds.some((routeId) => routesById.get(routeId)?.lastReviewed) && (
+        <p className="mt-1 text-xs text-text-muted">
+          Route data last reviewed:{' '}
+          {
+            routeIds
+              .map((routeId) => routesById.get(routeId)?.lastReviewed)
+              .filter(Boolean)[0]
+          }
+          . Review dates may not reflect current service conditions.
+        </p>
+      )}
+
       {fromId && toId && (
         <Link
           href={detailPath}

@@ -184,8 +184,8 @@ export default function Home() {
         Find a jeepney route
       </h1>
       <p className="mt-3 text-sm leading-6 text-text-secondary sm:text-base">
-        Choose where you are and where you are going. Para will prepare your origin and
-        destination for a future route search.
+        Choose where you are starting and where you are going. Para will find possible
+        jeepney journeys between your stops.
       </p>
 
       <form className="mt-6" onSubmit={handleSubmit} noValidate>
@@ -225,6 +225,12 @@ export default function Home() {
             helperText="Where are you going?"
           />
         </div>
+
+        {originStop && destinationStop && originId !== destinationId && (
+          <p className="mt-4 text-sm text-text-secondary" aria-live="polite">
+            {originStop.name} <span aria-hidden="true">→</span> {destinationStop.name}
+          </p>
+        )}
 
         <div className="mt-5 space-y-3">
           <button

@@ -1,4 +1,4 @@
-import { useEffect, useMemo } from 'react'
+﻿import { useEffect, useMemo } from 'react'
 import { ArrowLeft } from 'lucide-react'
 import { Link, useLocation } from 'wouter'
 
@@ -39,7 +39,7 @@ export default function Results() {
   }, [hasValidStops, originId, destinationId])
 
   useEffect(() => {
-    document.title = 'Para — Route results'
+    document.title = 'Para â€” Route results'
   }, [])
 
   const invalidMessage =
@@ -100,7 +100,7 @@ export default function Results() {
             aria-live="polite"
           >
             <span className="font-medium text-text">{originStop.name}</span>
-            <span aria-hidden="true">→</span>
+            <span aria-hidden="true">â†’</span>
             <span className="font-medium text-text">{destinationStop.name}</span>
           </div>
 
@@ -121,17 +121,17 @@ export default function Results() {
           </div>
 
           {journeys.length === 0 && (
-            <div className="mt-6 rounded-lg border border-dashed border-border-strong bg-surface p-5">
-              <p className="text-sm font-medium text-text">
-                No supported route options found
+            <div className="mt-6 rounded-lg border border-border bg-surface p-5">
+              <p className="text-base font-semibold text-text">
+                No supported journey found
               </p>
-              <p className="mt-1 text-sm text-text-secondary">
+              <p className="mt-2 text-sm text-text-secondary">
                 The preliminary data does not contain a supported direct or one-transfer
-                journey for these stops.
+                journey between these stops.
               </p>
-              <p className="mt-3 text-sm text-text-muted">
-                Try a different origin or destination. Future data improvements may add
-                additional routes and transfer points.
+              <p className="mt-3 text-sm text-text">
+                Try a different origin or destination. More routes may be added as data
+                improves.
               </p>
             </div>
           )}

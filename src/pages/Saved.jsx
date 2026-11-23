@@ -1,4 +1,4 @@
-import { useEffect } from 'react'
+﻿import { useEffect } from 'react'
 import { ArrowLeft, Bookmark as BookmarkIcon } from 'lucide-react'
 import { Link } from 'wouter'
 
@@ -9,7 +9,7 @@ export default function Saved() {
   const savedRoutes = useSavedRoutes()
 
   useEffect(() => {
-    document.title = 'Para — Saved routes'
+    document.title = 'Para â€” Saved routes'
   }, [])
 
   return (
@@ -59,7 +59,7 @@ export default function Saved() {
       {savedRoutes.storageAvailable && savedRoutes.savedItems.length === 0 && (
         <div className="mt-6 rounded-lg border border-dashed border-border-strong bg-surface p-6 text-center">
           <BookmarkIcon className="mx-auto h-8 w-8 text-text-muted" aria-hidden="true" />
-          <p className="mt-3 text-sm font-medium text-text">You have no saved routes.</p>
+          <p className="mt-3 text-sm font-medium text-text">No saved journeys yet.</p>
           <p className="mt-1 text-sm text-text-muted">
             Save a supported journey from your results or journey-detail view.
           </p>

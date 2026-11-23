@@ -201,6 +201,18 @@ export default function RouteDetail() {
           details may be incomplete, and service, directions, schedules, fares, and
           availability may differ from what is shown.
         </p>
+
+        {routeIds.some((routeId) => routesById.get(routeId)?.lastReviewed) && (
+          <p className="mt-2">
+            Route data last reviewed:{' '}
+            {
+              routeIds
+                .map((routeId) => routesById.get(routeId)?.lastReviewed)
+                .filter(Boolean)[0]
+            }
+            . Review dates may not reflect current service conditions.
+          </p>
+        )}
       </div>
 
       <article className="mt-6 rounded-lg border border-border bg-surface p-4 shadow-sm">
