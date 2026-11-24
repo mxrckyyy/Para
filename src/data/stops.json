@@ -59,8 +59,11 @@
       "aliases": ["Southwestern University", "Sambag II"],
       "source": "Photon/Komoot (OpenStreetMap contributors), accessed during Phase 2; name appears in a public Cebu Daily News Digital guide.",
       "verified": false,
-      "lastReviewed": null,
-      "notes": "Approximate landmark coordinate. Endpoint taken from a public route description."
+      "lastReviewed": "2026-11-24",
+      "notes": "Approximate landmark coordinate. Endpoint taken from a public route description. Route identity and corridor supported by Cebu Daily News Digital (May 15, 2026). Coordinates are approximate landmark values, not verified.",
+      "sourceOrganization": "Cebu Daily News Digital; Photon/Komoot (OpenStreetMap contributors)",
+      "verificationStatus": "partially_verified",
+      "reviewedBy": "Para Phase 65 evidence review"
     },
     {
       "id": "stop-north-bus-terminal",
@@ -68,10 +71,13 @@
       "lat": 10.3114677,
       "lng": 123.921263,
       "aliases": ["Cebu North Bus Terminal", "NBT"],
-      "source": "Photon/Komoot (OpenStreetMap contributors), accessed during Phase 2.",
+      "source": "Photon/Komoot (OpenStreetMap contributors), accessed during Phase 2; name appears in a public Cebu Daily News Digital guide.",
       "verified": false,
-      "lastReviewed": null,
-      "notes": "Approximate landmark coordinate. Endpoint taken from a public route description."
+      "lastReviewed": "2026-11-24",
+      "notes": "Approximate landmark coordinate. Endpoint taken from a public route description. Route identity and corridor supported by Cebu Daily News Digital (May 15, 2026). Coordinates are approximate landmark values, not verified.",
+      "sourceOrganization": "Cebu Daily News Digital; Photon/Komoot (OpenStreetMap contributors)",
+      "verificationStatus": "partially_verified",
+      "reviewedBy": "Para Phase 65 evidence review"
     },
     {
       "id": "stop-carbon-market-cebu",
@@ -103,8 +109,11 @@
       "aliases": ["Talamban, Cebu City"],
       "source": "Photon/Komoot (OpenStreetMap contributors), accessed during Phase 2; name appears in a public Cebu Daily News Digital guide.",
       "verified": false,
-      "lastReviewed": null,
-      "notes": "Approximate district-level coordinate. Endpoint taken from a public route description."
+      "lastReviewed": "2026-11-24",
+      "notes": "Approximate district-level coordinate. Endpoint taken from a public route description. Route identity and corridor supported by Cebu Daily News Digital (May 15, 2026). Coordinates are approximate landmark values, not verified.",
+      "sourceOrganization": "Cebu Daily News Digital; Photon/Komoot (OpenStreetMap contributors)",
+      "verificationStatus": "partially_verified",
+      "reviewedBy": "Para Phase 65 evidence review"
     },
     {
       "id": "stop-colon-street-cebu",
@@ -114,8 +123,11 @@
       "aliases": ["Colon", "Colon Street, Cebu City"],
       "source": "Photon/Komoot (OpenStreetMap contributors), accessed during Phase 2; name appears in a public Cebu Daily News Digital guide.",
       "verified": false,
-      "lastReviewed": null,
-      "notes": "Approximate coordinate for a downtown landmark endpoint."
+      "lastReviewed": "2026-11-24",
+      "notes": "Approximate coordinate for a downtown landmark endpoint. Route identity and corridor supported by Cebu Daily News Digital (May 15, 2026). Coordinates are approximate landmark values, not verified.",
+      "sourceOrganization": "Cebu Daily News Digital; Photon/Komoot (OpenStreetMap contributors)",
+      "verificationStatus": "partially_verified",
+      "reviewedBy": "Para Phase 65 evidence review"
     }
   ]
 }

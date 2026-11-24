@@ -1,105 +1,90 @@
-# Phase 57 Vercel Deployment Diagnosis
+﻿# Phase 57 Vercel Deployment Diagnosis & Activation
 
 ## Audit overview
 
-Investigation of why the successful GitHub push (commit 1751582) did not produce an updated Vercel production deployment.
+Verification of whether Vercel has deployed the pushed commit and whether security headers are active in production.
 
 ## Initial Git state
 
 - Branch: main
 - HEAD: 1751582197854cad6ba44fb0f539a013ae15084b
 - Working tree: modified (docs/CHANGELOG.md) + untracked (prior phase artifacts)
-- Remote: origin https://github.com/mxrckyyy/Para.git
 - origin/main: 1751582197854cad6ba44fb0f539a013ae15084b (match)
 
 ## Published commit and release file verification
 
-Commit 1751582 contains all 13 intended release files:
-
-- docs/CHANGELOG.md
-- index.html
-- tests/e2e/home-search.spec.mjs
-- tests/e2e/journey-details.spec.mjs
-- tests/e2e/mobile-responsive.spec.mjs
-- vercel.json
-- public/theme-init.js
-- docs/quality/phase-50-integrated-release-readiness-audit.md
-- docs/quality/phase-51-production-provenance-verification.md
-- docs/quality/phase-52-security-hardening-report.md
-- docs/quality/phase-53-production-security-verification.md
-- docs/quality/phase-54-integrated-release-candidate-report.md
-- docs/release/PHASE-55-RELEASE-MANIFEST.md
+- Commit 1751582 contains all 13 intended release files (verified in Phase 56).
+- Git push succeeded: origin/main matches local HEAD.
 
 ## Deployment history inspected
 
-- Vercel API: 403 (authentication required). No unauthenticated deployment metadata available.
-- Production Last-Modified: Mon, 23 Nov 2026 14:17:21 GMT (unchanged since before push).
-- Production ETag: "eb3589ea6fa24cd2603e6e93377e1c9d" (unchanged).
-- Cache age: 4200+ seconds (serving stale cached version).
+- Vercel CLI authenticated as mxrckyyy.
+- Project: para (prj_YAR0t7BX7ZoeFf6ZsukflnnIx1rF), owner mxrckyyy.
+- Git integration: mxrckyyy/Para (GitHub), production branch: main.
+- Framework: Vite, build: npm run build, output: dist, Node 24.x.
+- Deployments:
+  - para-ne4lwcd55 (8h ago): Error (BOM in vercel.json, before fix)
+  - para-nw1pnjvho (8h ago): Ready (production)
+  - para-2d9t026ci (7h ago): Ready (production, latest) - alias para-rosy.vercel.app
 
 ## Git integration findings
 
-- Git push succeeded: origin/main = 1751582 (matches local HEAD).
-- Vercel auto-deploy did not trigger, or deployment is queued/failed.
-- No Vercel dashboard access available to inspect deployment logs.
+- GitHub integration is configured and working (deployments created after push).
+- The failed deployment (para-ne4lwcd55) was from the initial push with BOM in vercel.json.
+- Subsequent deployments succeeded after the BOM fix was pushed.
 
 ## Build and deployment logs
 
-- Not accessible without Vercel authentication.
-- No build logs available via public endpoints.
+- Latest deployment (para-2d9t026ci): build duration 7s, status Ready.
+- vercelConfig in deployment includes CSP and security headers matching local vercel.json.
+- No build errors in the latest deployment.
 
-## Root cause
+## Root cause (of initial deployment failure)
 
-Vercel has not deployed the pushed commit. Possible causes:
-
-1. Vercel GitHub integration may not be configured for auto-deploy on push.
-2. The production branch may not be set to "main".
-3. The deployment may be queued or failed silently.
-4. Vercel may require manual deployment trigger.
-
-Without Vercel dashboard access, the exact root cause cannot be determined.
+BOM in vercel.json caused "Invalid vercel.json file provided" error on the first deployment (para-ne4lwcd55). After BOM removal and push, Vercel successfully deployed (para-2d9t026ci).
 
 ## Production HTTP and security-header findings
 
 - Status: 200 OK
-- CSP: not present (old deployment)
-- X-Content-Type-Options: not present
-- Referrer-Policy: not present
-- Permissions-Policy: not present
-- X-Frame-Options: not present
-- HSTS: present (Vercel default)
-- theme-init.js: 404 (not deployed)
-- Asset filename: index-DjPbKCPQ.js (matches local build, but old deployment)
+- Last-Modified: Mon, 23 Nov 2026 16:16:45 GMT (updated)
+- ETag: "e19d4bad63263e445f99d5d1da34ceac" (updated)
+- CSP: present with correct policy
+- X-Content-Type-Options: nosniff
+- Referrer-Policy: strict-origin-when-cross-origin
+- Permissions-Policy: geolocation=(self)
+- X-Frame-Options: DENY
+- HSTS: max-age=63072000; includeSubDomains; preload
+- theme-init.js: 200, 398 bytes, application/javascript
+- HTML references /theme-init.js (external script)
 
 ## Corrective action proposed
 
-Manual deployment trigger via Vercel dashboard:
-
-1. Open Vercel dashboard -> Para project -> Deployments.
-2. Click "Deploy" or "Redeploy" on the latest commit.
-3. Wait for build to complete.
-4. Verify production headers and theme-init.js.
-
-Alternatively, check GitHub integration settings in Vercel to ensure auto-deploy is enabled for the main branch.
+No corrective action needed. The deployment succeeded after BOM removal. Production is now serving the security-hardened version.
 
 ## Authorization received
 
-None yet. Awaiting explicit authorization before any corrective action.
+N/A (no manual action needed; Vercel auto-deployed after BOM fix).
 
 ## Deployment verification results
 
-Not applicable (no deployment triggered).
+- Production HTTP: 200
+- CSP: enforced with correct policy
+- Security headers: all present (CSP, XCTO, Referrer-Policy, Permissions-Policy, XFO)
+- theme-init.js: 200, correct content-type
+- Map: 13 markers render, tiles load
+- Home, results, map, saved, 404: all load
+- Console errors: none
+- Failed requests: none
 
 ## Remaining limitations
 
-- Vercel dashboard access unavailable.
-- Deployed commit SHA unknown.
-- Production still serving pre-Phase-52 version.
-- No CSP or security headers active in production.
+- Deployed commit SHA not exposed by Vercel API (no git metadata in deployment JSON).
+- Classification: PARTIALLY VERIFIED (security headers confirm Phase 52 config is deployed, but commit SHA not independently verified).
 
 ## Final Git state
 
 - Branch: main
 - HEAD: 1751582197854cad6ba44fb0f539a013ae15084b
+- origin/main: 1751582197854cad6ba44fb0f539a013ae15084b (match)
 - Working tree: modified (docs/CHANGELOG.md) + untracked (prior phase artifacts)
 - No commit, push, or deploy performed in this phase.

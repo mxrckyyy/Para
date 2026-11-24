@@ -32,11 +32,16 @@
       "path": null,
       "source": "Cebu Daily News Digital, 'Lost in Cebu? Here's a guide to Cebu City's jeepney route codes', May 15, 2026, listing PUJ route code amendments under Cebu City Ordinance No. 2000 and city transportation office data. Cited text: '01-K | Sambag II (SWU) – SM – North Bus Terminal'.",
       "verified": false,
-      "lastReviewed": null,
-      "notes": "Development simplification of a route description. Stop sequence, travel direction, intermediate stops, fares, travel times, and geometry are not verified and may be incomplete.",
+      "lastReviewed": "2026-11-24",
+      "notes": "Route identity and endpoints supported by Cebu Daily News Digital (May 15, 2026) citing Cebu City Ordinance No. 2000 and city transportation office data. Secondary sources (Suroy.ph, CommuteTour) corroborate route existence and general corridor. LTFRB-7 issued Show Cause Orders for 01K Libreng Sakay service, confirming service existence. Complete stop sequence, direction, geometry, fare, schedule, and travel time remain unverified. Para simplified stop sequence (SWU -> SM -> North Bus Terminal) does not represent the full intermediate stops documented by secondary sources.",
       "direction": null,
       "estimatedFarePhp": null,
-      "estimatedTravelTimeMinutes": null
+      "estimatedTravelTimeMinutes": null,
+      "sourceOrganization": "Cebu Daily News Digital; Suroy.ph; CommuteTour",
+      "evidenceReference": "Cebu Daily News Digital, 'Lost in Cebu? Here's a guide to Cebu City's jeepney route codes', May 15, 2026, listing PUJ route code amendments under Cebu City Ordinance No. 2000 and city transportation office data. Cited text: '01-K | Sambag II (SWU) - SM - North Bus Terminal'. Suroy.ph, 'Cebu City Jeepney Guide 2026', updated October 24, 2026, lists 01K among Sambag/Urgello/SWU routes. CommuteTour, updated January 2026, documents a detailed stop sequence for 01K.",
+      "verificationStatus": "partially_verified",
+      "verificationDate": "2026-11-24",
+      "reviewedBy": "Para Phase 65 evidence review"
     },
     {
       "id": "route-17b-apas-carbon",
@@ -62,11 +67,16 @@
       "path": null,
       "source": "Cebu Daily News Digital, 'Lost in Cebu? Here's a guide to Cebu City's jeepney route codes', May 15, 2026, listing PUJ route code amendments under Cebu City Ordinance No. 2000 and city transportation office data. Cited text: '13-C | TALAMBAN-COLON via Echavez – Sikatuna'.",
       "verified": false,
-      "lastReviewed": null,
-      "notes": "Development simplification of a route description. Only endpoints are represented; named corridor streets are not converted into verified intermediate stops. Fares, travel times, travel direction, and geometry are not verified.",
+      "lastReviewed": "2026-11-24",
+      "notes": "Route identity and endpoints supported by Cebu Daily News Digital (May 15, 2026) citing Cebu City Ordinance No. 2000 and city transportation office data. Secondary sources (Suroy.ph, CommuteTour, OpenAlfa) corroborate route existence and general corridor (via Banilad, Ayala, Echavez, Sikatuna). LPTRP confirms route exists under modernization compliance. Complete stop sequence, direction, geometry, fare, schedule, and travel time remain unverified. Para simplified stop sequence (Talamban -> Colon) does not represent the full intermediate stops documented by secondary sources.",
       "direction": null,
       "estimatedFarePhp": null,
-      "estimatedTravelTimeMinutes": null
+      "estimatedTravelTimeMinutes": null,
+      "sourceOrganization": "Cebu Daily News Digital; Suroy.ph; CommuteTour; OpenAlfa",
+      "evidenceReference": "Cebu Daily News Digital, 'Lost in Cebu? Here's a guide to Cebu City's jeepney route codes', May 15, 2026, listing PUJ route code amendments under Cebu City Ordinance No. 2000 and city transportation office data. Cited text: '13-C | TALAMBAN-COLON via Echavez - Sikatuna'. Suroy.ph, 'Cebu City Jeepney Guide 2026', updated October 24, 2026, lists 13C among Talamban/Pit-os routes. CommuteTour, updated January 2026, documents a detailed stop sequence for 13C.",
+      "verificationStatus": "partially_verified",
+      "verificationDate": "2026-11-24",
+      "reviewedBy": "Para Phase 65 evidence review"
     }
   ]
 }
