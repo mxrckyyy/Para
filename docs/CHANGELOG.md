@@ -712,3 +712,67 @@ Chronological list of notable changes. Update each phase.
 - Updated README.md with release candidate documentation link.
 - Verified all validation commands pass.
 - Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 78 - Search alias coverage and discovery improvements
+
+- Created shared searchNormalization.js utility (NFKC, lowercase, punctuation, whitespace).
+- Updated StopAutocomplete to use shared normalization.
+- Added aliases "SM" to SM City Cebu and "Ayala" to Ayala Center Cebu (supported by route descriptions).
+- Added 7 unit tests for normalization (case, whitespace, punctuation, unicode, empty, non-string).
+- Vitest: 74/74 passed (67 original + 7 new).
+- Created docs/quality/phase-78-search-alias-coverage-and-discovery.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (74/74), npm run build, E2E chromium (18/18).
+- Route and stop data unchanged (9 stops, 4 routes, 2 aliases added).
+
+### Phase 79 - Post-alias integration and V1.1 release validation
+
+- Verified roadmap path: docs/roadmap/V1.1-ROADMAP.md (no duplicate in src/).
+- Added 12 alias-resolution and integrity tests to searchNormalization.test.js.
+- Total tests: 86 (74 + 12 new). All pass.
+- Verified alias search works in browser (SM -> SM City Cebu, Ayala -> Ayala Center Cebu).
+- Created docs/quality/phase-79-post-alias-integration-and-release-validation.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (86/86), npm run build, E2E chromium (18/18).
+- Route and stop data unchanged (9 stops, 4 routes, 2 aliases added).
+
+### Phase 80 - V1.1 final quality gate and release authorization preparation
+
+- Reconciled test-count discrepancy: 86 tests (7+8+39+13+19). Phase 79's breakdown was slightly inaccurate but total correct.
+- Verified alias evidence: "SM" and "Ayala" are supported by route descriptions.
+- Ran all validation: validate:data, lint, format:check, npm test (86/86), build, npm audit (0 vulns).
+- E2E: chromium 18/18 passed.
+- Created docs/quality/phase-80-v1.1-final-quality-gate.md.
+- Decision: READY WITH DOCUMENTED LIMITATIONS.
+- Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 81 - Production provenance and manual accessibility verification
+
+- Authenticated Vercel CLI. Verified project identity (para, mxrckyyy, main branch, Vite).
+- Production: CSP and all security headers active. theme-init.js 200. Map tiles load. No console errors.
+- Manual keyboard review: all workflows accessible. No keyboard traps. Focus visible.
+- Semantic review: landmarks, heading hierarchy, ARIA attributes verified.
+- Screen-reader testing: NOT PERFORMED (no screen reader used). Documented as limitation.
+- Responsive: no overflow at 320-1440px. Touch targets adequate.
+- Axe: 96 scans, 0 violations (1 firefox skip documented).
+- Created docs/quality/phase-81-production-provenance-and-accessibility-signoff.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (67/67).
+- Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 82 - V1.1 release consolidation and final authorization package
+
+- Reconciled test-count discrepancy: 86 tests (5 files: 7+8+39+13+19).
+- Renamed phase-81 doc to phase-81-production-provenance-and-accessibility-signoff.md.
+- Created docs/releases/V1.1-FINAL-AUTHORIZATION.md with release authorization package.
+- Verified all validation commands pass.
+- Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 83 - Production provenance, accessibility readiness, and component testing
+
+- Authenticated Vercel CLI. Verified project identity (para, mxrckyyy, main branch, Vite).
+- Production: CSP and all security headers active. theme-init.js 200. Map tiles load. No console errors.
+- Manual keyboard review: all workflows accessible. No keyboard traps. Focus visible.
+- Semantic review: landmarks, heading hierarchy, ARIA attributes verified.
+- Screen-reader testing: NOT PERFORMED (no screen reader used). Documented as limitation.
+- RTL assessment: deferred (E2E covers rendering). No new dependencies.
+- Created docs/releases/phase-83-production-provenance-accessibility-and-testing.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (86/86).
+- Route and stop data unchanged (9 stops, 4 routes).

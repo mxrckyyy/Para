@@ -2,14 +2,13 @@ import { useEffect, useMemo, useRef, useState } from 'react'
 import { X } from 'lucide-react'
 
 import stopsData from '../../data/stops.json'
+import { normaliseSearchText } from '../../utils/searchNormalization.js'
 
 const stops = stopsData.stops
 
 const DEBOUNCE_MS = 120
 
-function normaliseText(value) {
-  return value.trim().toLowerCase()
-}
+const normaliseText = normaliseSearchText
 
 function stopMatchesQuery(stop, query) {
   if (!query) return false
