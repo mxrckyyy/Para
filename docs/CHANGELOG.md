@@ -797,3 +797,14 @@ Chronological list of notable changes. Update each phase.
 - Created docs/research/phase-85-official-lptrp-document-recovery.md.
 - Verified with npm run validate:data, npm run lint, npm run format:check, npm test (86/86).
 - Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 86 - Government records acquisition and route evidence recovery
+
+- Investigated automatic commit mechanism: OpenCode harness auto-commits, not git hooks.
+- Attempted official source access: LTFRB, Cebu City government, CCTO all inaccessible.
+- Created 4 formal records request drafts under docs/research/requests/.
+- Created route-verification-framework.md with reusable checklist.
+- Created docs/releases/phase-86-evidence-recovery-report.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (86/86), npm audit (0 vulns).
+- Route and stop data unchanged (9 stops, 4 routes).
+- Classification: RESEARCH BLOCKED.
