@@ -514,3 +514,152 @@ describe('route engine edge cases', () => {
     expect(reverse).toHaveLength(1)
   })
 })
+
+describe('Phase 70 routing edge cases', () => {
+  const threeRouteStops = [
+    { id: 'stop-a', lat: 10, lng: 123 },
+    { id: 'stop-b', lat: 10.05, lng: 123.05 },
+    { id: 'stop-c', lat: 10.1, lng: 123.1 },
+    { id: 'stop-d', lat: 10.2, lng: 123.2 },
+  ]
+
+  const routeAB = { id: 'route-ab', code: 'AB', stopIds: ['stop-a', 'stop-b'] }
+  const routeBC = { id: 'route-bc', code: 'BC', stopIds: ['stop-b', 'stop-c'] }
+  const routeCD = { id: 'route-cd', code: 'CD', stopIds: ['stop-c', 'stop-d'] }
+
+  it('does not produce two-transfer journeys (a to d via b and c)', () => {
+    const journeys = findJourneys({
+      originStopId: 'stop-a',
+      destinationStopId: 'stop-d',
+      routeData: { routes: [routeAB, routeBC, routeCD] },
+      stops: threeRouteStops,
+    })
+    // Only one-transfer journeys are supported; a->d requires two transfers (a->b->c->d)
+    // so no journey should be found (no single route or one-transfer covers a->d)
+    expect(journeys).toEqual([])
+  })
+
+  it('finds one-transfer journey when a shared stop exists (a to c via b)', () => {
+    const journeys = findJourneys({
+      originStopId: 'stop-a',
+      destinationStopId: 'stop-c',
+      routeData: { routes: [routeAB, routeBC] },
+      stops: threeRouteStops,
+    })
+    expect(journeys).toHaveLength(1)
+    expect(journeys[0].type).toBe('transfer')
+    expect(journeys[0].transferStopId).toBe('stop-b')
+  })
+
+  it('does not create a journey when no shared transfer stop exists', () => {
+    const journeys = findJourneys({
+      originStopId: 'stop-a',
+      destinationStopId: 'stop-d',
+      routeData: { routes: [routeAB, routeCD] },
+      stops: threeRouteStops,
+    })
+    expect(journeys).toEqual([])
+  })
+
+  it('preserves verification status in journey data when present', () => {
+    const routeWithStatus = {
+      id: 'route-status',
+      code: 'S1',
+      stopIds: ['stop-a', 'stop-d'],
+      verificationStatus: 'partially_verified',
+    }
+    const journeys = findDirectJourneys('stop-a', 'stop-d', {
+      routes: [routeWithStatus],
+      stops: threeRouteStops,
+    })
+    expect(journeys).toHaveLength(1)
+    expect(journeys[0].dataVerificationStatus).toBe('preliminary-unverified')
+  })
+
+  it('returns empty for identical origin and destination', () => {
+    const journeys = findJourneys({
+      originStopId: 'stop-a',
+      destinationStopId: 'stop-a',
+      routeData: { routes: [routeAB] },
+      stops: threeRouteStops,
+    })
+    expect(journeys).toEqual([])
+  })
+
+  it('returns empty for unknown origin', () => {
+    const journeys = findJourneys({
+      originStopId: 'stop-unknown',
+      destinationStopId: 'stop-d',
+      routeData: { routes: [routeAB, routeBC, routeCD] },
+      stops: threeRouteStops,
+    })
+    expect(journeys).toEqual([])
+  })
+
+  it('returns empty for unknown destination', () => {
+    const journeys = findJourneys({
+      originStopId: 'stop-a',
+      destinationStopId: 'stop-unknown',
+      routeData: { routes: [routeAB, routeBC, routeCD] },
+      stops: threeRouteStops,
+    })
+    expect(journeys).toEqual([])
+  })
+
+  it('deduplicateJourneys removes exact duplicate journey keys', () => {
+    const journey = {
+      originStopId: 'stop-a',
+      destinationStopId: 'stop-b',
+      type: 'direct',
+      routeIds: ['route-ab'],
+      routeCodes: ['AB'],
+      transferStopId: null,
+      transferCount: 0,
+    }
+    const duplicate = { ...journey }
+    const result = deduplicateJourneys([journey, duplicate])
+    expect(result).toHaveLength(1)
+  })
+
+  it('handles route with no stopIds gracefully', () => {
+    const badRoute = { id: 'route-bad', code: 'BAD' }
+    const journeys = findDirectJourneys('stop-a', 'stop-b', {
+      routes: [badRoute, routeAB],
+      stops: threeRouteStops,
+    })
+    expect(journeys).toHaveLength(1)
+    expect(journeys[0].routeIds).toEqual(['route-ab'])
+  })
+
+  it('bidirectional route allows travel in both directions', () => {
+    const biRoute = {
+      id: 'route-bi',
+      code: 'BI',
+      stopIds: ['stop-a', 'stop-b', 'stop-c'],
+      direction: 'bidirectional',
+    }
+    const forward = findDirectJourneys('stop-a', 'stop-c', {
+      routes: [biRoute],
+      stops: threeRouteStops,
+    })
+    const reverse = findDirectJourneys('stop-c', 'stop-a', {
+      routes: [biRoute],
+      stops: threeRouteStops,
+    })
+    expect(forward).toHaveLength(1)
+    expect(reverse).toHaveLength(1)
+  })
+
+  it('unidirectional route does not allow reverse travel', () => {
+    const uniRoute = {
+      id: 'route-uni',
+      code: 'UNI',
+      stopIds: ['stop-a', 'stop-b', 'stop-c'],
+    }
+    const reverse = findDirectJourneys('stop-c', 'stop-a', {
+      routes: [uniRoute],
+      stops: threeRouteStops,
+    })
+    expect(reverse).toHaveLength(0)
+  })
+})

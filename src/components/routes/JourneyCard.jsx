@@ -35,10 +35,21 @@ export function JourneyCard({ journey, fromId, toId, saved = false, onToggleSave
   const originName = stopsById.get(fromId)?.name ?? fromId
   const destinationName = stopsById.get(toId)?.name ?? toId
   const distanceLabel = formatDistance(journey?.estimatedDistanceMetres)
-  const routeVerificationStatus =
-    routeIds
-      .map((routeId) => routesById.get(routeId)?.verificationStatus)
-      .find((status) => typeof status === 'string') ?? 'unverified'
+  const routeVerificationGroups = routeIds.reduce((groups, routeId) => {
+    const status = routesById.get(routeId)?.verificationStatus
+    const code = routesById.get(routeId)?.code ?? routeId
+    const key = typeof status === 'string' ? status : 'unverified'
+    const existing = groups.find((group) => group.status === key)
+    if (existing) {
+      existing.codes.push(code)
+    } else {
+      groups.push({ status: key, codes: [code] })
+    }
+    return groups
+  }, [])
+  if (routeVerificationGroups.length === 0) {
+    routeVerificationGroups.push({ status: 'unverified', codes: [] })
+  }
 
   return (
     <article className="rounded-lg border border-border bg-surface p-4 shadow-sm transition-colors">
@@ -80,7 +91,16 @@ export function JourneyCard({ journey, fromId, toId, saved = false, onToggleSave
           >
             {isDirect ? 'Direct' : 'Transfer'}
           </span>
-          <DataStatusBadge status={routeVerificationStatus} />
+          {routeVerificationGroups.map((group) => (
+            <div key={group.status} className="flex flex-col items-end gap-1">
+              {group.codes.length > 0 && routeIds.length > 1 && (
+                <span className="text-[10px] font-medium text-text-muted">
+                  {group.codes.join(', ')}
+                </span>
+              )}
+              <DataStatusBadge status={group.status} />
+            </div>
+          ))}
         </div>
       </div>
 

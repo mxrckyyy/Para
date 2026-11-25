@@ -1,4 +1,4 @@
-# Para
+﻿# Para
 
 Para is a mobile-first React application that helps commuters in Cebu discover possible jeepney routes between an
 origin and destination. It searches bundled static route data, sorts and filters journey options through a
@@ -155,7 +155,7 @@ The map uses public OpenStreetMap tiles and displays the required OpenStreetMap 
 - Routing is client-side through Wouter.
 - Domain route-finding logic is intentionally separated from React components.
 - Static JSON remains the only route/stops data source.
-- The project has since grown through Phases 1-43, including route discovery, results, journey details, map, saved journeys, automated tests, accessibility audits, performance audits, and deployment verification. See docs/CHANGELOG.md for the full history.
+- The project has since grown through Phases 1-77, including route discovery, results, journey details, map, saved journeys, automated tests, accessibility audits, performance audits, and deployment verification. See docs/CHANGELOG.md for the full history.
 
 ## Documentation
 

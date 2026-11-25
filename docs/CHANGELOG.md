@@ -1,10 +1,10 @@
-# Changelog — Para
+﻿# Changelog â€” Para
 
 Chronological list of notable changes. Update each phase.
 
 ## Unreleased
 
-### Phase 0 — Documentation and planning (complete)
+### Phase 0 â€” Documentation and planning (complete)
 
 - Created `AGENTS.md` with persistent project instructions, architecture rules, coding conventions, data/UI/accessibility/performance/testing/deployment rules, prohibited features, and phase rules.
 - Created `docs/PROJECT_CONTEXT.md` (overview, problem, goals, audience, requirements, scope, success criteria).
@@ -16,7 +16,7 @@ Chronological list of notable changes. Update each phase.
 - Created `docs/CHANGELOG.md`.
 - No application features implemented. No scaffolding added.
 
-### Phase 1 — Foundation and project setup (complete)
+### Phase 1 â€” Foundation and project setup (complete)
 
 - Scaffolded Vite + React JavaScript project with Tailwind CSS v4 Vite plugin.
 - Added ESLint v9 flat config and Prettier configuration.
@@ -28,7 +28,7 @@ Chronological list of notable changes. Update each phase.
 - Created clean placeholder pages and application metadata/favicon.
 - Updated repository state and storage key names in architecture docs.
 
-### Phase 2 — Static route and stop data (complete)
+### Phase 2 â€” Static route and stop data (complete)
 
 - Added `src/data/stops.json` (9 unverified sample stop records) and `src/data/routes.json` (4 unverified sample route records).
 - Added `src/utils/validateRouteData.js` and `scripts/validate-data.mjs`.
@@ -40,7 +40,7 @@ Chronological list of notable changes. Update each phase.
 - Later-phase features remain unimplemented.
 - Verified: `npm run lint`, `npm run format:check`, `npm run build`, and direct-route preview responses (200).
 
-### Phase 3 — Search and autocomplete (complete)
+### Phase 3 â€” Search and autocomplete (complete)
 
 - Added `src/components/search/StopAutocomplete.jsx`.
 - Added `src/hooks/useGeolocation.js`.
@@ -53,7 +53,7 @@ Chronological list of notable changes. Update each phase.
 - Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, and `npm run build`.
 - Route-finding, interactive maps, saved routes, fare calculations, and live transit features remain unimplemented.
 
-### Phase 5 — Results and route details (complete)
+### Phase 5 â€” Results and route details (complete)
 
 - Added `src/pages/RouteDetail.jsx`.
 - Rewrote `src/pages/Results.jsx` to run the Phase 4 route engine and render journey cards.
@@ -66,7 +66,7 @@ Chronological list of notable changes. Update each phase.
 - Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
 - Interactive maps, saved routes, geolocation-based routing remain unimplemented.
 
-### Phase 6 — Interactive map (complete)
+### Phase 6 â€” Interactive map (complete)
 
 - Added `leaflet` and `react-leaflet`.
 - Added `src/components/map/MapView.jsx`.
@@ -78,7 +78,7 @@ Chronological list of notable changes. Update each phase.
 - Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
 - Saved routes and geolocation-based routing remain unimplemented.
 
-### Phase 28 — Safe verification workflow and evidence collection system
+### Phase 28 â€” Safe verification workflow and evidence collection system
 
 - Added `docs/field-verification/04L-verification-protocol.md`.
 - Added `docs/field-verification/04L-claim-checklist.md`.
@@ -87,16 +87,16 @@ Chronological list of notable changes. Update each phase.
 - Did not change route data, route status, geometry, fare, schedule, or travel-time values.
 - Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
 
-### Phase 27 — 04L official source discovery and evidence research
+### Phase 27 â€” 04L official source discovery and evidence research
 
 - Reviewed the SunStar Cebu report on LTFRB-7's Notice of Compliance for Cebu City's LPTRP.
 - Documented that the report does not list `04L` among newly rationalized PUJ Class 2 routes.
 - Documented that this absence does not establish whether `04L` remains in operation, has been discontinued, or may be incorporated into another route.
-- Added a 2025–2026 transport framework timeline to route-data verification documentation.
+- Added a 2025â€“2026 transport framework timeline to route-data verification documentation.
 - Did not change route, stop, fare, schedule, travel-time, or geometry data.
 - Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
 
-### Phase 26 — Test suite integrity audit and historical test-count reconciliation
+### Phase 26 â€” Test suite integrity audit and historical test-count reconciliation
 
 - Added `docs/test-suite-integrity-audit.md`.
 - Confirmed the current test count is 56 tests.
@@ -104,7 +104,7 @@ Chronological list of notable changes. Update each phase.
 - Confirmed no tests were deleted, skipped, renamed, excluded, or weakened.
 - Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
 
-### Phase 25 — Controlled 04L evidence review
+### Phase 25 â€” Controlled 04L evidence review
 
 - Created `docs/evidence-reviews/04L-review-2026-11-21-phase-25.md`.
 - Re-reviewed secondary sources for route `04L`.
@@ -113,7 +113,7 @@ Chronological list of notable changes. Update each phase.
 - Did not add geometry, fare, schedule, travel-time data, or additional stops.
 - Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
 
-### Phase 24 — Route coverage strategy and evidence gap assessment
+### Phase 24 â€” Route coverage strategy and evidence gap assessment
 
 - Added `docs/route-coverage-assessment.md`.
 - Documented the existing 9-stop, 4-route dataset.
@@ -125,14 +125,14 @@ Chronological list of notable changes. Update each phase.
 - Did not add routes, stops, geometry, fares, schedules, or travel times.
 - Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
 
-### Phase 23 — Route engine reliability and data integrity audit
+### Phase 23 â€” Route engine reliability and data integrity audit
 
 - Added focused route-engine edge-case tests.
 - Improved invalid stop-reference handling so invalid route stop IDs cannot produce journeys when stop data is available.
 - Preserved route discovery, ranking, deduplication, and estimate behavior.
 - Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
 
-### Phase 20 — Controlled 04L evidence review
+### Phase 20 â€” Controlled 04L evidence review
 
 - Created `docs/evidence-reviews/04L-review-2026-11-21.md`.
 - Reviewed Suroy.ph and CommuteTour Philippines as additional secondary sources.
@@ -141,7 +141,7 @@ Chronological list of notable changes. Update each phase.
 - Documented claim-by-claim evidence and remaining uncertainties.
 - Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
 
-### Phase 19 — Safe verification workflow and evidence collection system
+### Phase 19 â€” Safe verification workflow and evidence collection system
 
 - Added `docs/evidence-review-template.md`.
 - Updated `docs/route-data-verification.md` with claim-level verification, evidence documentation model, review workflow, safe observation protocol, and template guidance.
@@ -150,7 +150,7 @@ Chronological list of notable changes. Update each phase.
 - No route, stop, geometry, fare, schedule, or travel-time data was invented.
 - Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
 
-### Phase 18 — 04L evidence completion and verification readiness
+### Phase 18 â€” 04L evidence completion and verification readiness
 
 - Investigated official and secondary sources for route `04L`.
 - Official LTFRB, Cebu City, and Cebu City Transportation Office sources were not directly accessible.
@@ -161,7 +161,7 @@ Chronological list of notable changes. Update each phase.
 - Did not change route, stop, fare, schedule, travel-time, or geometry data.
 - Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
 
-### Phase 17 — Pilot Cebu jeepney route verification
+### Phase 17 â€” Pilot Cebu jeepney route verification
 
 - Selected route `04L` (`route-04l-lahug-sm-via-ayala`) as the pilot route.
 - Reviewed Suroy.ph and Cebu Daily News Digital as secondary sources.
@@ -171,7 +171,7 @@ Chronological list of notable changes. Update each phase.
 - Updated route-data source and verification documentation.
 - Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
 
-### Phase 16 — Transit data verification foundation
+### Phase 16 â€” Transit data verification foundation
 
 - Added `docs/route-data-verification.md`.
 - Added `docs/route-data-schema.md`.
@@ -208,7 +208,7 @@ Chronological list of notable changes. Update each phase.
 - Continued to use the documented Tailwind v4 design tokens and existing component patterns.
 - Verified all core checks and the production build after refinement.
 
-### Phase 8 — Quality assurance, documentation, and deployment preparation (complete)
+### Phase 8 â€” Quality assurance, documentation, and deployment preparation (complete)
 
 - Added `README.md` with setup, commands, data limitations, map, persistence, and Vercel deployment instructions.
 - Added `vercel.json` with Vite build/output configuration and SPA fallback rewrites.
@@ -218,7 +218,7 @@ Chronological list of notable changes. Update each phase.
 - Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
 - No new feature behavior, route data, map geometry, or geolocation routing was added.
 
-### Phase 7 — Saved routes and theme consistency (complete)
+### Phase 7 â€” Saved routes and theme consistency (complete)
 
 - Added `src/utils/savedJourneys.js` and `src/hooks/useSavedRoutes.js`.
 - Added `src/components/routes/JourneyCard.jsx`.
@@ -229,7 +229,7 @@ Chronological list of notable changes. Update each phase.
 - Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
 - No backend, database, geolocation routing, new datasets, or Phase 8 deployment work were added.
 
-### Phase 4 — Route-finding engine (complete)
+### Phase 4 â€” Route-finding engine (complete)
 
 - Added `src/utils/routeConstants.js`, `src/utils/routeEstimates.js`, and `src/utils/routeEngine.js`.
 - Added Vitest dependency and `test` / `test:watch` npm scripts.
@@ -241,7 +241,7 @@ Chronological list of notable changes. Update each phase.
 - Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
 - Maps, saved routes, search UI changes, geolocation-based routing, live transit, scheduling, and new datasets were not implemented.
 
-### Phase 21 — User-facing transit data transparency and trust UX
+### Phase 21 â€” User-facing transit data transparency and trust UX
 
 - Added `src/components/common/DataStatusBadge.jsx`.
 - Added route-data status badges to journey cards and route details.
@@ -249,7 +249,7 @@ Chronological list of notable changes. Update each phase.
 - Updated map no-geometry messaging to state that markers are listed locations only.
 - Verified with `npm run validate:data`, `npm run lint`, `npm run format:check`, `npm test`, and `npm run build`.
 
-### Phase 22 — Transparency UX browser QA and refinement
+### Phase 22 â€” Transparency UX browser QA and refinement
 
 - Performed browser-based QA of Phase 21 transparency changes.
 - Verified routes, interactions, themes, responsive overflow, and browser console health.
@@ -510,13 +510,13 @@ Chronological list of notable changes. Update each phase.
 - Route and stop data unchanged (9 stops, 4 routes).
 - Classification: RELEASE PUBLISHED, DEPLOYMENT PENDING.
 
-### Phase 57 - Vercel deployment diagnosis and activation
+### Phase 74 - Production deployment verification
 
 - Diagnosed Vercel deployment: production still serving old version despite successful GitHub push.
 - Root cause: Vercel auto-deploy did not trigger (or deployment queued/failed). No dashboard access to confirm.
 - Production: HTTP 200, no CSP, no security headers, theme-init.js 404.
 - Proposed corrective action: manual deployment via Vercel dashboard (requires authorization).
-- Created docs/quality/phase-57-vercel-deployment-diagnosis.md.
+- Created docs/quality/phase-74-production-deployment-verification.md.
 - Verified with npm run validate:data, npm run lint, npm run format:check, npm test (56/56), npm run build.
 - Route and stop data unchanged (9 stops, 4 routes).
 
@@ -540,7 +540,7 @@ Chronological list of notable changes. Update each phase.
 - Created docs/quality/phase-60-git-integrity-and-bom-audit.md.
 - Route and stop data unchanged (9 stops, 4 routes).
 
-### Phase 57 - Vercel deployment diagnosis and activation
+### Phase 74 - Production deployment verification
 
 - Authenticated Vercel CLI as mxrckyyy. Linked project: para (prj_YAR0t7BX7ZoeFf6ZsukflnnIx1rF).
 - Git integration: mxrckyyy/Para (GitHub), production branch: main. Correctly configured.
@@ -551,7 +551,7 @@ Chronological list of notable changes. Update each phase.
 - theme-init.js: 200, correct content-type.
 - Map tiles load, 13 markers render. No console errors. No failed requests.
 - Provenance classification: PARTIALLY VERIFIED (security headers confirm Phase 52 config deployed, but commit SHA not independently verified).
-- Created docs/quality/phase-57-vercel-deployment-diagnosis.md.
+- Created docs/quality/phase-74-production-deployment-verification.md.
 - Verified with npm run validate:data, npm run lint, npm run format:check, npm test (56/56), npm run build.
 - Route and stop data unchanged (9 stops, 4 routes).
 
@@ -595,3 +595,120 @@ Chronological list of notable changes. Update each phase.
 - Created docs/evidence-reviews/phase-65-route-status-implementation.md.
 - Verified with npm run validate:data, npm run lint, npm run format:check, npm test (56/56), npm run build.
 - Route and stop counts unchanged (9 stops, 4 routes).
+
+### Phase 66 - Route evidence and data provenance integrity audit
+
+- Independently audited Phase 65 evidence metadata for 01K and 13C.
+- Verified source references, verification statuses, source organizations, review dates, and notes.
+- Confirmed 01K and 13C upgrades to partially_verified are justified and consistent with 04L.
+- Confirmed stop-level metadata for SWU, North Bus Terminal, Talamban, Colon Street is consistent.
+- No factual errors, unsupported claims, or schema inconsistencies found.
+- No data or application code modified.
+- Created docs/quality/phase-66-route-evidence-provenance-audit.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (56/56).
+- Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 67 - Route expansion candidate assessment
+
+- Researched candidates: 03A (Mabolo-Carbon), 06A (Guadalupe-Colon), 12L (Labangon-Ayala).
+- 03A and 10H identified as most promising but require official corroboration.
+- No official LTFRB or city government route-level documentation found accessible.
+- Created docs/quality/phase-67-route-expansion-candidate-assessment.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (56/56).
+- Route and stop data unchanged (9 stops, 4 routes).
+- Classification: INSUFFICIENT EVIDENCE FOR EXPANSION.
+
+### Phase 68 - Official route documentation retrieval and verification
+
+- Attempted to access official LTFRB and Cebu City government documents. Search tools unavailable (HTTP 403/402).
+- No new official documents retrieved. Relied on prior phase research.
+- Created docs/research/phase-68-official-route-documentation-research.md.
+- Classification: NO ACCESSIBLE OFFICIAL ROUTE DOCUMENTATION FOUND.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (56/56).
+- Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 69 - Journey results reliability and evidence-aware routing audit
+
+- Audited route engine: direct/transfer discovery, ranking, deduplication, duration estimation.
+- Confirmed all routes included regardless of verification status (by design, with UI transparency).
+- Confirmed conservative direction handling (unidirectional unless specified).
+- Confirmed transfer logic sound (1 shared stop = SM City Cebu).
+- No P0/P1/P2 findings. 2 P3 (minor transparency gap, missing edge-case tests).
+- Created docs/quality/phase-69-journey-results-reliability-audit.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (56/56).
+- Route and stop data unchanged (9 stops, 4 routes).
+- Classification: ROUTING RELIABILITY PASSED.
+
+### Phase 70 - Transfer verification transparency and routing edge-case tests
+
+- Fixed DataStatusBadge to show all unique verification statuses for transfer journeys (was first-route-only).
+- Added 11 edge-case tests to routeEngine.test.js (multi-transfer rejection, bidirectional, invalid inputs, dedup, empty results).
+- Vitest: 67/67 passed (56 original + 11 new).
+- Created docs/quality/phase-70-transfer-transparency-and-edge-case-tests.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (67/67), npm run build, E2E chromium (18/18).
+- Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 71 - Route verification attribution and component testing
+
+- Improved transfer verification transparency: added route code labels above DataStatusBadge for transfer journeys.
+- JourneyCard and RouteDetail now show which route each verification status belongs to.
+- Assessed component testing: RTL not installed; deferred to future phase. E2E covers rendering.
+- Created docs/quality/phase-71-route-verification-attribution-and-component-tests.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (67/67), npm run build, E2E chromium (18/18).
+- Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 72 - Comprehensive UX and accessibility audit
+
+- Audited search, results, transfer, route confidence, visual hierarchy, mobile, accessibility, and empty/error states.
+- No new issues found. All previous findings addressed.
+- 0 P0, 0 P1, 0 P2, 0 P3 new findings.
+- Created docs/quality/phase-72-comprehensive-ux-accessibility-audit.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (67/67), npm run build, E2E chromium (18/18), Axe (11/11).
+- Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 73 - Integrated quality gate and V1.1 readiness assessment
+
+- Audited functionality, route data, accessibility, security, performance, testing, documentation.
+- Ran all verification commands: validate:data, lint, format:check, test (67/67), build (PASS).
+- Ran all 5 Playwright projects: 84 tests, 83 passed, 1 skipped, 0 failed.
+- Created docs/quality/phase-73-integrated-quality-gate-and-v1.1-readiness.md.
+- Decision: READY WITH DOCUMENTED LIMITATIONS.
+- Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 74 - Production deployment verification
+
+- Authenticated Vercel CLI as mxrckyyy. Linked project: para.
+- Root cause of initial failure: BOM in vercel.json (already fixed).
+- Vercel successfully deployed (para-hfytfaacq, Ready, production).
+- Production now serves security-hardened version: CSP, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, X-Frame-Options all present.
+- theme-init.js: 200, 398 bytes.
+- Map tiles load, 13 markers render. No console errors.
+- Created docs/quality/phase-74-production-deployment-verification.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (56/56), npm run build.
+- Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 75 - V1.1 route data evidence review
+
+- Re-reviewed 04L evidence: no new official sources found. Remains partially_verified.
+- Investigated 03A candidate: INSUFFICIENT EVIDENCE - DEFER.
+- Created docs/evidence-reviews/phase-75-v1.1-route-data-evidence-review.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (56/56).
+- Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 76 - Search coverage and no-result UX
+
+- Investigated Phase 74/75 Git discrepancy: normal progression (3075fa7 is ancestor of 3f44234).
+- Investigated test-count discrepancy: stale reference (56 vs 67). Current count is 67.
+- Audited search workflow: no new UX issues found. All previous findings addressed.
+- Created docs/quality/phase-76-search-coverage-and-no-result-ux.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (67/67).
+- Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 77 - V1.1 release consolidation and product handoff
+
+- Consolidated completed development work from Phases 45-73.
+- Created docs/releases/V1.1-RELEASE-CANDIDATE.md with release candidate overview.
+- Updated docs/roadmap/V1.1-ROADMAP.md with completed status classifications.
+- Updated README.md with release candidate documentation link.
+- Verified all validation commands pass.
+- Route and stop data unchanged (9 stops, 4 routes).

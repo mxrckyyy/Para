@@ -148,10 +148,21 @@ export default function RouteDetail() {
 
   const isDirect = journey.type === 'direct'
   const routeIds = Array.isArray(journey.routeIds) ? journey.routeIds : []
-  const routeVerificationStatus =
-    routeIds
-      .map((routeId) => routesById.get(routeId)?.verificationStatus)
-      .find((status) => typeof status === 'string') ?? 'unverified'
+  const routeVerificationGroups = routeIds.reduce((groups, routeId) => {
+    const status = routesById.get(routeId)?.verificationStatus
+    const code = routesById.get(routeId)?.code ?? routeId
+    const key = typeof status === 'string' ? status : 'unverified'
+    const existing = groups.find((group) => group.status === key)
+    if (existing) {
+      existing.codes.push(code)
+    } else {
+      groups.push({ status: key, codes: [code] })
+    }
+    return groups
+  }, [])
+  if (routeVerificationGroups.length === 0) {
+    routeVerificationGroups.push({ status: 'unverified', codes: [] })
+  }
   const transferStop =
     typeof journey.transferStopId === 'string'
       ? (stopsById.get(journey.transferStopId) ?? null)
@@ -227,7 +238,16 @@ export default function RouteDetail() {
                 : journey.type}
             </h2>
             <div className="mt-2">
-              <DataStatusBadge status={routeVerificationStatus} />
+              {routeVerificationGroups.map((group) => (
+                <div key={group.status} className="flex flex-col items-start gap-1">
+                  {group.codes.length > 0 && routeIds.length > 1 && (
+                    <span className="text-xs font-medium text-text-muted">
+                      {group.codes.join(', ')}
+                    </span>
+                  )}
+                  <DataStatusBadge status={group.status} />
+                </div>
+              ))}
             </div>
           </div>
           <button
