@@ -130,8 +130,10 @@ export function StopAutocomplete({
 
   function handleBlur() {
     setTimeout(() => {
-      setIsOpen(false)
-    }, 100)
+      if (!rootRef.current?.contains(document.activeElement)) {
+        setIsOpen(false)
+      }
+    }, 0)
   }
 
   const describedBy =
@@ -215,6 +217,11 @@ export function StopAutocomplete({
                   id={`${id}-option-${index}`}
                   type="button"
                   role="option"
+                  aria-label={
+                    stop.aliases?.length
+                      ? `${stop.name} ${stop.aliases.join(', ')}`
+                      : stop.name
+                  }
                   aria-selected={isActive}
                   tabIndex={-1}
                   onClick={() => selectStop(stop)}
@@ -222,15 +229,18 @@ export function StopAutocomplete({
                     'flex min-h-11 w-full items-center justify-between gap-3 px-3 py-2.5 text-left text-sm transition-colors',
                     'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-inset focus-visible:ring-primary',
                     isActive
-                      ? 'bg-primary-soft text-primary'
+                      ? 'bg-primary-soft text-primary dark:text-primary-hover'
                       : 'text-text hover:bg-surface-muted',
                   ].join(' ')}
                 >
                   <span className="font-medium">{stop.name}</span>
                   {stop.aliases?.length ? (
-                    <span className="truncate text-xs text-text-muted">
-                      {stop.aliases.join(', ')}
-                    </span>
+                    <>
+                      {' '}
+                      <span className="truncate text-xs text-text-muted">
+                        {stop.aliases.join(', ')}
+                      </span>
+                    </>
                   ) : null}
                 </button>
               )

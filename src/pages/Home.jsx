@@ -32,7 +32,7 @@ export default function Home() {
   const destinationStop = useMemo(() => findStop(destinationId), [destinationId])
 
   useEffect(() => {
-    document.title = 'Para â€” Find a jeepney route'
+    document.title = 'Para — Find a jeepney route'
   }, [])
 
   useEffect(() => {

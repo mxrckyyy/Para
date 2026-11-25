@@ -13,7 +13,7 @@ export function DataStatusBadge({ status = 'unverified', className = '' }) {
       className={[
         'inline-flex rounded-md px-2 py-1 text-xs font-semibold',
         status === 'verified'
-          ? 'bg-primary-soft text-primary'
+          ? 'bg-primary-soft text-primary dark:text-primary-hover'
           : 'bg-surface-muted text-text-secondary',
         className,
       ].join(' ')}

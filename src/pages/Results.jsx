@@ -39,7 +39,7 @@ export default function Results() {
   }, [hasValidStops, originId, destinationId])
 
   useEffect(() => {
-    document.title = 'Para â€” Route results'
+    document.title = 'Para — Route results'
   }, [])
 
   const invalidMessage =
@@ -100,7 +100,7 @@ export default function Results() {
             aria-live="polite"
           >
             <span className="font-medium text-text">{originStop.name}</span>
-            <span aria-hidden="true">â†’</span>
+            <span aria-hidden="true">→</span>
             <span className="font-medium text-text">{destinationStop.name}</span>
           </div>
 

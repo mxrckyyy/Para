@@ -9,7 +9,7 @@ export default function Saved() {
   const savedRoutes = useSavedRoutes()
 
   useEffect(() => {
-    document.title = 'Para â€” Saved routes'
+    document.title = 'Para — Saved routes'
   }, [])
 
   return (

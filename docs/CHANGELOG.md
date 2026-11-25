@@ -819,3 +819,82 @@ Chronological list of notable changes. Update each phase.
 - Created docs/research/phase-87-records-request-readiness.md.
 - Verified with npm run validate:data, npm run lint, npm run format:check, npm test (86/86).
 - Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 88 - Submission handoff and evidence controls
+
+- Audited all four government records request drafts.
+- Created docs/research/phase-88-submission-handoff.md with practical submission instructions.
+- Created docs/research/requests/request-tracking-template.md with four NOT SUBMITTED entries.
+- Improved docs/research/requests/README.md with submission tracking and response handling.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (86/86).
+- Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 89 - Source independence and evidence provenance audit
+
+- Audited 15 sources for independence and dependency relationships.
+- Key finding: CDN Digital and Inquirer.net are same publisher (not independent).
+- Key finding: Suroy.ph is a single source, not multiple independent sources.
+- Key finding: 03A has effectively only 1 independent secondary source (CommuteTour), not 2.
+- Created docs/research/source-inventory.md, source-dependency-matrix.md, route-claim-evidence-matrix.md.
+- Created docs/research/phase-89-provenance-audit.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (86/86).
+- Route and stop data unchanged (9 stops, 4 routes).
+- Classification: PARTIALLY VERIFIED.
+
+### Phase 90 - Targeted 03A evidence review and source independence verification
+
+- Independently verified source independence claims from Phase 89.
+- Key finding: 03A has effectively only 1 independent secondary source (CommuteTour), not 2.
+- Key finding: S1 (CDN Digital) and S7 (Inquirer.net) are same publisher (Inquirer Publications).
+- Key finding: Suroy.ph is a single source, not multiple independent sources.
+- Created docs/research/phase-90-03a-evidence-review.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (86/86).
+- Route and stop data unchanged (9 stops, 4 routes).
+- Classification: PARTIALLY VERIFIED.
+
+### Phase 91 - Evidence count reconciliation and research readiness
+
+- Reconciled S1/S2 dependency conflict; reclassified S2 (Suroy.ph) as LIKELY DEPENDENCY for route codes (was POSSIBLE).
+- Identified S2/S9 and S4/S15 as duplicate inventory entries for the same sources (Suroy.ph and OpenAlfa respectively). Deduplicated to 13 unique sources.
+- Confirmed S1 (CDN Digital) and S7 (Inquirer.net) are same publisher (Inquirer Publications) - not independent.
+- Recalculated route evidence counts for 04L, 01K, 13C, 17B, 03A with separate counts for directly inspected, independent, dependent, historical, official uninspected, and unknown-independence sources.
+- Reviewed all route classifications; all remain defensible. No classifications changed.
+- 03A remains DEFERRED (effectively 1 independent secondary source).
+- All four government records requests remain NOT SUBMITTED.
+- Created docs/research/phase-91-evidence-count-reconciliation.md.
+- Created docs/research/route-verification-status-review.md.
+- Updated docs/research/source-dependency-matrix.md (duplicate correction, reclassification, evidence counts).
+- Created docs/releases/phase-91-evidence-reconciliation-report.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (86/86), npm audit (0 vulns).
+- Route and stop data unchanged (9 stops, 4 routes).
+- Classification: PARTIALLY VERIFIED.
+
+### Phase 92 - Production integrity and accessibility verification
+
+- Reconciled local Git and origin/main: both at dbcd8822ad5deaa850c6aefbc71dfa37c0c64d48, 0 ahead/behind, no divergence. Harness auto-commit explanation documented.
+- Verified production deployment via Vercel CLI: latest deployment Ready, aliases para-rosy.vercel.app, deployed commit SHA dbcd882... matches local HEAD and origin/main (VERIFIED MATCH).
+- Production smoke tests: all routes return 200, security headers present, assets load.
+- Manual accessibility review performed (keyboard, semantic, contrast tokens, responsive, screen-reader readiness via DOM inspection only).
+- Automated accessibility: Chromium 18 passed (0 violations), Firefox 17 passed + 1 skipped (axe tooling), WebKit 16 passed + 2 failed (autocomplete timing), mobile 30 passed.
+- Fixed page-title mojibake in index.html (double-encoded em dash replaced with U+2014).
+- Live screen-reader testing NOT performed; documented as not performed.
+- Route data, classifications, and records-request statuses unchanged.
+- Created docs/quality/phase-92-git-integrity.md, phase-92-production-verification.md, phase-92-accessibility-audit.md.
+- Created docs/releases/phase-92-production-quality-report.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test, npm audit, npm run build.
+- Route and stop data unchanged (9 stops, 4 routes).
+- Classification: PARTIALLY VERIFIED.
+
+### Phase 93 - Accessibility defect investigation and release readiness
+
+- Investigated WebKit autocomplete failures: identified blur race (fixed) and WebKit accessible-name computation (fixed via aria-label). Residual flakiness documented as unresolved.
+- Fixed blur race in StopAutocomplete (activeElement check, timer cancellation).
+- Added aria-label={stop.name} to autocomplete option for cross-browser accessible name.
+- Fixed mojibake in index.html and Home/Results/Saved document titles (em dash) and Results arrow.
+- Contrast audit: measured all token combinations. Fixed dark primary-on-primary-soft badge contrast (DataStatusBadge, StopAutocomplete) to use dark:text-primary-hover. Documented input/subtle border contrast tradeoff (not changed).
+- Screen-reader readiness: live testing NOT performed; practical procedure documented.
+- Created docs/quality/phase-93-webkit-investigation.md, phase-93-contrast-audit.md, phase-93-screen-reader-readiness.md.
+- Created docs/releases/phase-93-accessibility-readiness-report.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test, npm audit, npm run build.
+- Route and stop data unchanged (9 stops, 4 routes).
+- Classification: ACCESSIBILITY IMPROVED.
