@@ -1,10 +1,24 @@
 # Records Request Draft - Cebu City Planning and Development Office
 
-## Requesting Institution
+## Recipient Institution
 
 Cebu City Planning and Development Office (CPDO)
 
-## Records Sought
+## Subject
+
+Request for Existing Public Records Concerning the Cebu City Local Public Transport Route Plan (LPTRP)
+
+## Requesting Party
+
+[Requesting party name / organization placeholder]
+
+Para is a Cebu jeepney route discovery application maintained by an independent developer. Contact details available upon request.
+
+## Purpose
+
+Para needs verified route identities, endpoints, intermediate stops, and current operational status to present accurate information to commuters. This request seeks existing public records only.
+
+## Exact Records Requested
 
 1. Approved Cebu City Local Public Transport Route Plan (LPTRP) 2024-2028.
 2. Route annexes and route matrices for all approved routes.
@@ -13,19 +27,17 @@ Cebu City Planning and Development Office (CPDO)
 5. Mabolo Central Loop route documentation.
 6. Supporting annexes for LPTRP adoption.
 
-## Purpose
-
-Para is a Cebu jeepney route discovery application that needs verified route identities, endpoints, intermediate stops, and current operational status to present accurate information to commuters.
-
-## Routes of interest
+## Relevant Transportation Route Codes
 
 - 01K, 03A, 04L, 13C, 17B
 - Mabolo Central Loop routes
 
-## Requested format
+## Preferred Format
 
-Electronic copies (PDF) where available, including route annexes and maps.
+Electronic copies (PDF) where available, including route annexes and maps. If records are held by another office, please clarify which office holds them.
 
-## Notes
+## Polite Closing
+
+Thank you for your time and assistance. If any of the requested records are not available or are held by another office, please let me know so I can direct my request accordingly.
 
 This is a draft. It has not been submitted. Submission requires authorization from the project owner.

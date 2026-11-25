@@ -808,3 +808,14 @@ Chronological list of notable changes. Update each phase.
 - Verified with npm run validate:data, npm run lint, npm run format:check, npm test (86/86), npm audit (0 vulns).
 - Route and stop data unchanged (9 stops, 4 routes).
 - Classification: RESEARCH BLOCKED.
+
+### Phase 87 - Records request readiness and route evidence consolidation
+
+- Audited all four government records request drafts.
+- Improved drafts with recipient institution, subject, requesting party placeholder, purpose, exact records requested, preferred format, clarification request, and polite closing.
+- Created docs/research/requests/README.md with submission tracking and response handling procedures.
+- Created docs/research/route-evidence-consolidation.md with consolidated evidence for all routes and candidates.
+- Created docs/research/route-verification-framework.md with reusable verification checklist.
+- Created docs/research/phase-87-records-request-readiness.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (86/86).
+- Route and stop data unchanged (9 stops, 4 routes).

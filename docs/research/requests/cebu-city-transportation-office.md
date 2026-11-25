@@ -1,10 +1,24 @@
 # Records Request Draft - Cebu City Transportation Office
 
-## Requesting Institution
+## Recipient Institution
 
 Cebu City Transportation Office (CCTO)
 
-## Records Sought
+## Subject
+
+Request for Existing Public Records Concerning Cebu City PUJ Route Implementation Status
+
+## Requesting Party
+
+[Requesting party name / organization placeholder]
+
+Para is a Cebu jeepney route discovery application maintained by an independent developer. Contact details available upon request.
+
+## Purpose
+
+Para needs verified route identities, endpoints, intermediate stops, and current operational status to present accurate information to commuters. This request seeks existing public records only.
+
+## Exact Records Requested
 
 1. Current implementation status of relevant PUJ routes (01K, 03A, 04L, 13C, 17B).
 2. Publicly available operational route information.
@@ -12,19 +26,17 @@ Cebu City Transportation Office (CCTO)
 4. Available documentation concerning legacy route transitions.
 5. Authorized loading and unloading stops for relevant routes.
 
-## Purpose
-
-Para is a Cebu jeepney route discovery application that needs verified route identities, endpoints, intermediate stops, and current operational status to present accurate information to commuters.
-
-## Routes of interest
+## Relevant Transportation Route Codes
 
 - 01K, 03A, 04L, 13C, 17B
 - Mabolo Central Loop routes
 
-## Requested format
+## Preferred Format
 
-Electronic copies where available.
+Electronic copies where available. If records are held by another office, please clarify which office holds them.
 
-## Notes
+## Polite Closing
+
+Thank you for your time and assistance. If any of the requested records are not available or are held by another office, please let me know so I can direct my request accordingly.
 
 This is a draft. It has not been submitted. Submission requires authorization from the project owner.
