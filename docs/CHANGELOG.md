@@ -787,3 +787,13 @@ Chronological list of notable changes. Update each phase.
 - Created docs/research/phase-84-03a-route-evidence-review.md.
 - Verified with npm run validate:data, npm run lint, npm run format:check, npm test (86/86).
 - Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 85 - Official LPTRP document recovery and route verification research
+
+- Investigated Git HEAD discrepancy: auto-commit progression (same pattern as prior phases). No rollback or data loss.
+- Attempted official source access: LTFRB, Cebu City government, Cebu City Transportation Office all inaccessible.
+- No new official documents retrieved. Search tools unavailable (HTTP 403/402).
+- 03A current operational status cannot be established. DEFER.
+- Created docs/research/phase-85-official-lptrp-document-recovery.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (86/86).
+- Route and stop data unchanged (9 stops, 4 routes).
