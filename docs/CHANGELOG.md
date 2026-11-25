@@ -776,3 +776,14 @@ Chronological list of notable changes. Update each phase.
 - Created docs/releases/phase-83-production-provenance-accessibility-and-testing.md.
 - Verified with npm run validate:data, npm run lint, npm run format:check, npm test (86/86).
 - Route and stop data unchanged (9 stops, 4 routes).
+
+### Phase 84 - 03A route evidence review
+
+- Investigated 03A historical route and current operational status under LPTRP.
+- Historical evidence exists (CommuteTour, Inquirer.net) supporting route identity and corridor.
+- No official source confirms current operational status.
+- LPTRP may have replaced or modified the route.
+- Decision: DEFER (insufficient evidence for current operational status).
+- Created docs/research/phase-84-03a-route-evidence-review.md.
+- Verified with npm run validate:data, npm run lint, npm run format:check, npm test (86/86).
+- Route and stop data unchanged (9 stops, 4 routes).
